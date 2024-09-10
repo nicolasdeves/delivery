@@ -27,3 +27,7 @@ Route::prefix('/cardapio')->group(function(){
 });
 
 Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
+
+//login do ADM
+Route::get('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'login'])->name('loginAdm');
+Route::post('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'autenticar'])->name('autenticar');

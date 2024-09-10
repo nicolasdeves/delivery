@@ -8,26 +8,26 @@ class CardapioController extends Controller
 {
     public function cardapio_burg()
     {
-        return view('cardapio_burg');
+        return view('site.cardapio_burg');
     }
 
     public function cardapio_burg_batata()
     {
-        return view('cardapio_burg_batata');
+        return view('site.cardapio_burg_batata');
     }
 
     public function cardapio_entrada()
     {
-        return view('cardapio_entrada');
+        return view('site.cardapio_entrada');
     }
 
     public function cardapio_rango()
     {
-        return view('cardapio_rango');
+        return view('site.cardapio_rango');
     }
 
     public function cardapio_drink()
     {
-        return view('cardapio_drink');
+        return view('site.cardapio_drink');
     }
 }
