@@ -51,7 +51,7 @@
                     <div class="card-content">
                         <h3>Cardápio</h3>
                         <p>Conheça as variedades que temos para você.</p>
-                        <a href="#" class="learn-more">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
+                        <a href="cardapio_burg.blade.php" class="learn-more">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
 
 
     <footer class="footer">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container d-flex justify-content-between align-items-center lora-font">
             <img src="../images/laporto.jpg" width="40px" height="40px" style="border-radius: 50px;" alt="Logo">
             <p>Copyright © 2024 <strong>LaPorto</strong>. All rights reserved.</p>
             <div class="social-icons">

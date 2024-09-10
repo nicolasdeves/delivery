@@ -194,7 +194,7 @@ footer {
     background-color: #d3d3d3;
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 10px 10px;
 }
 
 .footer-logo {
@@ -202,3 +202,4 @@ footer {
     max-height: 40px;
     border-radius: 50px;
 }
+
