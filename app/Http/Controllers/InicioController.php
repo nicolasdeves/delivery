@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class InicioController extends Controller
 {
     public function inicio(){
-        return view('index');
+        return view('site.index');
     }
 }
