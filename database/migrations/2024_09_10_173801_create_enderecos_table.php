@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsuarioModelsTable extends Migration
+class CreateEnderecosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUsuarioModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('endereco', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 60);
-            $table->string('email', 40);
-            $table->string('telefone',20);
-            $table->string('cpf', 11);
-            $table->string('senha', 20);
+            $table->string('rua', 60);
+            $table->string('numero', 10);
+            $table->string('bairro', 40);
+            $table->string('cep', 10)->nullable();
+            $table->foreignId('usuario_id')->constrained('usuario')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateUsuarioModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario_models');
+        Schema::dropIfExists('enderecos');
     }
 }
