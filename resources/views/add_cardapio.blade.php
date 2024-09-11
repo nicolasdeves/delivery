@@ -38,38 +38,38 @@
         </nav>
     </header>
 
-    <div class="container">
-            <div class="form-container lora-font">
-                <h2 class="shadows-into-light-regular">Cadastro de Comidas</h2>
-                <!-- Ver se funciona o php-->
-                <?php
-                if (isset($_GET['success']) && $_GET['success'] == 1) {
-                    echo '<p class="success-message">Post cadastrado com sucesso!</p>';
-                }
-                ?>
-                <form method="post" enctype="multipart/form-data">
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo" required>
-                    
-                    <label for="conteudo">Conteúdo:</label>
-                    <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+    <div class="container-add">
+        <div class="form-container lora-font">
+            <h2 class="shadows-into-light-regular">Cadastro de Comidas</h2>
+            <!-- Ver se funciona o php-->
+            <?php
+            if (isset($_GET['success']) && $_GET['success'] == 1) {
+                echo '<p class="success-message">Post cadastrado com sucesso!</p>';
+            }
+            ?>
+            <form method="post" enctype="multipart/form-data">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
 
-                    <label for="opcao">Tipo:</label>
-                    <select name="opcoes" id="opcoes">
-                        <option value="hamburguer">Hamburguer</option>
-                        <option value="hamburguer_fritas">Hamburguer com Fritas</option>
-                        <option value="entradas">Entrada</option>
-                        <option value="rangos">Rangos</option>
-                        <option value="drink">Drinks</option>
-                    </select>
-                    
-                    <label for="imagem">Imagem:</label>
-                    <input type="file" id="imagem" name="imagem" accept="image/*" required>
-                    
-                    <button type="submit">Cadastrar</button>
-                </form>
-            </div>
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+
+                <label for="opcao">Tipo:</label>
+                <select name="opcoes" id="opcoes">
+                    <option value="hamburguer">Hamburguer</option>
+                    <option value="hamburguer_fritas">Hamburguer com Fritas</option>
+                    <option value="entradas">Entrada</option>
+                    <option value="rangos">Rangos</option>
+                    <option value="drink">Drinks</option>
+                </select>
+
+                <label for="imagem">Imagem:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
         </div>
+    </div>
 
     <footer class="footer fixed-bottom">
         <div class="container d-flex justify-content-between align-items-center lora-font">
