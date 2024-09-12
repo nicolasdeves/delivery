@@ -31,7 +31,7 @@
         <nav>
             <ul>
                 <li><a href="index.blade.php"><u class="sublinhado">Início</u></a></li>
-                <li><a href="cardapio_burg.blade.php">Cardápio</a></li>
+                <li><a href="/cardapio/burger">Cardápio</a></li>
                 <li><a href="#">Delivery</a></li>
                 <li><a href="#">Sobre nós</a></li>
             </ul>
@@ -51,8 +51,7 @@
                     <div class="card-content">
                         <h3>Cardápio</h3>
                         <p>Conheça as variedades que temos para você.</p>
-                        <a href="#" class="learn-more">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                        <a href="cardapio_burg.blade.php" class="learn-more">Ver Cardápio <i class="fas fa-arrow-right"></i></a>                    </div>
                 </div>
             </div>
             <div class="col">
@@ -94,8 +93,7 @@
 
 
     <footer class="footer">
-        <div class="container d-flex justify-content-between align-items-center">
-            <img src="../images/laporto.jpg" width="40px" height="40px" style="border-radius: 50px;" alt="Logo">
+        <div class="container d-flex justify-content-between align-items-center lora-font">            <img src="../images/laporto.jpg" width="40px" height="40px" style="border-radius: 50px;" alt="Logo">
             <p>Copyright © 2024 <strong>LaPorto</strong>. All rights reserved.</p>
             <div class="social-icons">
                 <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i class="fab fa-facebook-f"></i></a>
