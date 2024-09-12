@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsuarioTable extends Migration
+class CreateReserva extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,16 @@ class CreateUsuarioTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('reserva', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nome', 60);
+            $table->integer('quantidade_pessoas')->unsigned();
 
-            $table->string('email', 40);
+            $table->string('observacao', 200)->nullable();
 
-            $table->string('telefone',20);
+            $table->date('data_reserva');
 
-            $table->string('cpf', 11);
-
-            $table->string('senha', 20);
+            $table->foreignId('usuario_id')->constrained('usuario')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -37,6 +35,6 @@ class CreateUsuarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('reserva');
     }
 }

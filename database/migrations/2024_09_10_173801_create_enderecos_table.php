@@ -15,11 +15,17 @@ class CreateEnderecosTable extends Migration
     {
         Schema::create('endereco', function (Blueprint $table) {
             $table->id();
+
             $table->string('rua', 60);
+
             $table->string('numero', 10);
+
             $table->string('bairro', 40);
+
             $table->string('cep', 10)->nullable();
+
             $table->foreignId('usuario_id')->constrained('usuario')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
