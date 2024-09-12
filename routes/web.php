@@ -32,6 +32,6 @@ Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
 Route::get('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'login'])->name('loginAdm');
 Route::post('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'autenticar'])->name('autenticar');
 
-Route::get('/adicionar-cardapio', function(){
-    return view('site/add_cardapio');
-})->name('adicionar-cardapio');
+
+//Rota de adicionar cardápio
+Route::get('/adicionar-cardapio', [App\Http\Controllers\GerenciaController::class, 'index'])->name('adicionar-cardapio');
