@@ -85,7 +85,7 @@
     </div>
 
     <footer class="footer">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="container d-flex justify-content-between align-items-center lora-font " style="padding: 0px 0;">
             <img src="../images/laporto.jpg" width="40px" height="40px" style="border-radius: 50px;" alt="Logo">
             <p>Copyright © 2024 <strong>LaPorto</strong>. All rights reserved.</p>
             <div class="social-icons">
