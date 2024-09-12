@@ -43,7 +43,7 @@
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
                     <a href="cardapio_burg.blade.php"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
-                    <a href="cardapio_burg_batata"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
+                    <a href="cardapio_burg_batata.blade.php"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
                     <a href="cardapio_entrada.blade.php"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
                     <a href="cardapio_rango.blade.php"><button><i class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
                     <a href="cardapio_drink.blade.php"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
@@ -57,6 +57,8 @@
                         <img src="../images/hamburguer1.jpg" alt="">
                         <h3>Hamburguer Pão e Ovo</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne bovina.</p>
+                        <a href="#"><button>Editar</button></a>
+                        <a href="#"><button>Deletar</button></a>
                     </div>
                 </div>
                 <div class="row">
@@ -64,6 +66,8 @@
                         <img src="../images/hamburguer2.jpg" alt="">
                         <h3>Hamburguer Pão e Ovo</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne bovina.</p>
+                        <a href="#"><button>Editar</button></a>
+                        <a href="#"><button>Deletar</button></a>
                     </div>
                 </div>
                 <div class="row">
@@ -71,7 +75,8 @@
                         <img src="../images/hamburguer2.jpg" alt="">
                         <h3>Hamburguer Pão e Ovo</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne bovina.</p>
-
+                        <a href="#"><button>Editar</button></a>
+                        <a href="#"><button>Deletar</button></a>
                     </div>
                 </div>
                 <div class="row">
@@ -79,6 +84,8 @@
                         <img src="../images/hamburguer2.jpg" alt="">
                         <h3>Hamburguer Pão e Ovo</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne bovina.</p>
+                        <a href="#"><button>Editar</button></a>
+                        <a href="#"><button>Deletar</button></a>
                     </div>
                 </div>
             </div>

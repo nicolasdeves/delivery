@@ -18,7 +18,7 @@ Route::get('/', [App\Http\Controllers\InicioController::class, 'inicio'])->name(
 
 
 // Rotas do cardápio
-Route::prefix('/cardapio')->group(function(){
+Route::prefix('/cardapio')->group(function () {
     Route::get('/burger', [App\Http\Controllers\CardapioController::class, 'cardapio_burg'])->name('cardapio_burg');
     Route::get('/burgerBatata', [App\Http\Controllers\CardapioController::class, 'cardapio_burg_batata'])->name('cardapio_burg_batata');
     Route::get('/entrada', [App\Http\Controllers\CardapioController::class, 'cardapio_entrada'])->name('cardapio_entrada');
@@ -35,3 +35,8 @@ Route::post('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'auten
 
 //Rota de adicionar cardápio
 Route::get('/adicionar-cardapio', [App\Http\Controllers\GerenciaController::class, 'index'])->name('adicionar-cardapio');
+Route::get('/lista-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('lista-cardapio');
+
+
+//Rota do menu ADM
+Route::get('/menuADM', [App\Http\Controllers\GerenciaController::class, 'menuADM'])->name('menuADM');
