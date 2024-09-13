@@ -16,7 +16,7 @@ class GerenciaController extends Controller
         return view('site/lista_cardapio');
     }
 
-    public function menuADM()
+    public function menuAdm()
     {
         return view('site/menu_adm');
     }

@@ -26,17 +26,16 @@ Route::prefix('/cardapio')->group(function () {
     Route::get('/drink', [App\Http\Controllers\CardapioController::class, 'cardapio_drink'])->name('cardapio_drink');
 });
 
+
 Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
+
 
 //login do ADM
 Route::get('/loginAdm/{erro?}', [App\Http\Controllers\LoginAdmController::class, 'login'])->name('loginAdm');
 Route::post('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'autenticar'])->name('autenticar');
 
-
-//Rota de adicionar cardápio
+//Rotas de gerenciamento
+Route::get('/menuAdm', [App\Http\Controllers\GerenciaController::class, 'menuAdm'])->name('menuAdm');
 Route::get('/adicionar-cardapio', [App\Http\Controllers\GerenciaController::class, 'index'])->name('adicionar-cardapio');
 Route::get('/lista-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('lista-cardapio');
 
-
-//Rota do menu ADM
-Route::get('/menuADM', [App\Http\Controllers\GerenciaController::class, 'menuADM'])->name('menuADM');

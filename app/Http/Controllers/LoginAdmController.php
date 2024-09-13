@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Middleware\LoginAdmMiddleware;
 
 class LoginAdmController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(LoginAdmMiddleware::class);
+    }
     public function login(Request $request, $erro = null){
 
         if ($erro) {
