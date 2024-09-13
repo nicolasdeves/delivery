@@ -104,6 +104,12 @@ nav ul li a:hover {
     padding: 20px;
     width: 90%;
     text-align: center;
+    transition: transform 0.3s;
+    transform-origin: center; 
+}
+
+.card-content:hover {
+    transform: scale(1.05) translateX(-47.5%);
 }
 
 .card-content h3 {
