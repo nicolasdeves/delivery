@@ -48,6 +48,7 @@
             }
             ?>
             <form method="post" enctype="multipart/form-data">
+                
                 <label for="titulo">Título:</label>
                 <input type="text" id="titulo" name="titulo" required>
 
