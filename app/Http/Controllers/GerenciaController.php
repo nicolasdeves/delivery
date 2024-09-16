@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class GerenciaController extends Controller
 {
-    public function index()
+    public function addCardapio()
     {
         return view('site/add_cardapio');
     }

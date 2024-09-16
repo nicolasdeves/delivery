@@ -15,7 +15,16 @@ class LoginAdmMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {
+{
+    if ($request->session()->has('admin') && $request->session()->get('admin') === 'admin') {
         return $next($request);
     }
+
+    if ($request->route()->getName() === 'loginAdm') {
+        return $next($request);
+    }
+
+    return redirect()->route('loginAdm');
+}
+
 }

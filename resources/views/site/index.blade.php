@@ -51,7 +51,7 @@
                     <div class="card-content">
                         <h3>Cardápio</h3>
                         <p>Conheça as variedades que temos para você.</p>
-                        <a href="cardapio_burg.blade.php" class="learn-more">Ver Cardápio <i class="fas fa-arrow-right"></i></a>                    </div>
+                        <a href="/cardapio/burger" class="learn-more">Ver Cardápio <i class="fas fa-arrow-right"></i></a>                    </div>
                 </div>
             </div>
             <div class="col">
