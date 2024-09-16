@@ -28,8 +28,8 @@
     </div>
     <nav>
         <ul>
-            <li><a href="/home">Início</a></li>
-            <li><a href="/cardapio/burger"><u class="sublinhado">Cardápio</u></a></li>
+            <li><a href="{{ route('inicio') }}">Início</a></li>
+            <li><a href="{{ route('cardapio_burg') }}"><u class="sublinhado">Cardápio</u></a></li>
             <li><a href="#">Delivery</a></li>
             <li><a href="#">Sobre nós</a></li>
         </ul>
@@ -42,11 +42,11 @@
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
-                    <a href="#"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
-                    <a href="/cardapio/burgerBatata"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
-                    <a href="/cardapio/entrada"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
-                    <a href="/cardapio/rango"><button><i class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
-                    <a href="/cardapio/rango"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
+                    <a href="#"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
+                    <a href="{{ route('cardapio_burg_batata')}}"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
+                    <a href="{{ route('cardapio_entrada') }}"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
+                    <a href="{{ route('cardapio_rango') }}"><button><i class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
+                    <a href="{{ route('cardapio_drink') }}"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
                 </div>
             </div>
         </div>
