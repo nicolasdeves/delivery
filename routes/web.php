@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Rota da página inicial
-Route::get('/', [App\Http\Controllers\InicioController::class, 'inicio'])->name('inicio');
+Route::get('/home', [App\Http\Controllers\InicioController::class, 'inicio'])->name('inicio');
 
 
 // Rotas do cardápio

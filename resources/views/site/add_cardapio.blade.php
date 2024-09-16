@@ -30,7 +30,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.blade.php">Início</a></li>
+                <li><a href="/home">Início</a></li>
                 <li><a href="cardapio_burg.blade.php"><u class="sublinhado">Cardápio</u></a></li>
                 <li><a href="#">Delivery</a></li>
                 <li><a href="#">Sobre nós</a></li>
