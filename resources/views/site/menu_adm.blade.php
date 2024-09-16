@@ -31,7 +31,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.blade.php"><u class="sublinhado">Início</u></a></li>
+                <li><a href="/"><u class="sublinhado">Início</u></a></li>
                 <li><a href="/cardapio/burger">Cardápio</a></li>
                 <li><a href="#">Delivery</a></li>
                 <li><a href="#">Sobre nós</a></li>

@@ -28,8 +28,8 @@
     </div>
     <nav>
         <ul>
-            <li><a href="index.blade.php">Início</a></li>
-            <li><a href="cardapio_burg.blade.php"><u class="sublinhado">Cardápio</u></a></li>
+            <li><a href="/">Início</a></li>
+            <li><a href="/cardapio/burger"><u class="sublinhado">Cardápio</u></a></li>
             <li><a href="#">Delivery</a></li>
             <li><a href="#">Sobre nós</a></li>
         </ul>
@@ -42,11 +42,11 @@
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
-                    <a href="cardapio_burg.blade.php"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
-                    <a href="cardapio_burg_batata"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
-                    <a href="cardapio_entrada.blade.php"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
-                    <a href="cardapio_rango.blade.php"><button><i class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
-                    <a href="cardapio_drink.blade.php"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
+                    <a href="/cardapio/burger"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
+                    <a href="/cardapio/burgerBatata"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
+                    <a href="/cardapio/entrada"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
+                    <a href="/cardapio/rango"><button><i class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
+                    <a href="/cardapio/rango"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
                 </div>
             </div>
         </div>

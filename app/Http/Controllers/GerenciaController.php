@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class GerenciaController extends Controller
 {
-    public function index()
+    public function addCardapio()
     {
         return view('site/add_cardapio');
     }
@@ -16,7 +16,7 @@ class GerenciaController extends Controller
         return view('site/lista_cardapio');
     }
 
-    public function menuADM()
+    public function menuAdm()
     {
         return view('site/menu_adm');
     }
