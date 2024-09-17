@@ -26,16 +26,18 @@ Route::prefix('/cardapio')->group(function () {
     Route::get('/drink', [App\Http\Controllers\CardapioController::class, 'cardapio_drink'])->name('cardapio_drink');
 });
 
+//Login de usuário normal
+Route::get('/login', [App\Http\Controllers\GerenciaController::class, 'login'])->name('login_user');
 
 Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
 
 
 //Administração // Gerenciamento
-Route::prefix('/adm')->group(function(){
+Route::prefix('/adm')->group(function () {
     Route::get('/loginAdm/{erro?}', [App\Http\Controllers\LoginAdmController::class, 'login'])->name('loginAdm');
     Route::post('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'autenticar'])->name('autenticar');
 
-    Route::middleware(['checkLoginAdm'])->group(function() {
+    Route::middleware(['checkLoginAdm'])->group(function () {
         Route::get('/menuAdm', [App\Http\Controllers\GerenciaController::class, 'menuAdm'])->name('menuAdm');
         Route::get('/adicionar-cardapio', [App\Http\Controllers\GerenciaController::class, 'addCardapio'])->name('adicionar-cardapio');
         Route::get('/lista-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('lista-cardapio');
