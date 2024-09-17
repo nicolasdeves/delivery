@@ -24,8 +24,6 @@ class CreateUsuarioTable extends Migration
 
             $table->string('cpf', 11);
 
-            $table->string('senha', 20);
-
             $table->timestamps();
         });
     }

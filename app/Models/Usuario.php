@@ -12,9 +12,8 @@ class Usuario extends Model
     'nome', 
     'email', 
     'telefone', 
-    'cpf', 
-    'senha'
+    'cpf'
     ];
     use HasFactory;
-
+    
 }

@@ -31,6 +31,12 @@ Route::get('/login', [App\Http\Controllers\GerenciaController::class, 'login'])-
 
 Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
 
+//Rotas delivery
+Route::prefix('/delivery')->group(function(){
+    Route::get('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registroUsuario'])->name('registro-usuario');
+    Route::post('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registrar'])->name('registrar-usuario');
+});
+
 
 //Administração // Gerenciamento
 Route::prefix('/adm')->group(function () {
