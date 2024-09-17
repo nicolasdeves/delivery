@@ -10,8 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nerko+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nerko+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style-adicionar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -24,7 +27,8 @@
                 <span><i class="fas fa-envelope"></i> laporto@gmail.com.br</span>
             </div>
             <div class="social-icons">
-                <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/laportobar/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
@@ -47,21 +51,26 @@
                 echo '<p class="success-message">Post cadastrado com sucesso!</p>';
             }
             ?>
-            <form method="post" enctype="multipart/form-data">
-                
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo" required>
+            <form method="POST" action="{{ route('produto.adicionar') }}" enctype="multipart/form-data">
 
-                <label for="conteudo">Conteúdo:</label>
-                <textarea id="conteudo" name="conteudo" rows="4" required></textarea>
+                @csrf
+
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="nome" required>
+
+                <label for="conteudo">Descrição:</label>
+                <textarea id="conteudo" name="descricao" rows="4" required></textarea>
+
+                <label for="preco">Preço:</label>
+                <textarea id="preco" name="preco" required></textarea>
 
                 <label for="opcao">Tipo:</label>
-                <select name="opcoes" id="opcoes">
-                    <option value="hamburguer">Hamburguer</option>
-                    <option value="hamburguer_fritas">Hamburguer com Fritas</option>
-                    <option value="entradas">Entrada</option>
-                    <option value="rangos">Rangos</option>
-                    <option value="drink">Drinks</option>
+                <select name="tipo_produto_id" id="opcoes">
+                    <option value="1">Hamburguer</option>
+                    <option value="2">Hamburguer com Fritas</option>
+                    <option value="3">Entrada</option>
+                    <option value="4">Rangos</option>
+                    <option value="5">Drinks</option>
                 </select>
 
                 <label for="imagem">Imagem:</label>
@@ -72,19 +81,33 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
     <footer class="footer fixed-bottom">
         <div class="container d-flex justify-content-between align-items-center lora-font">
             <img src="../images/laporto.jpg" width="40px" height="40px" style="border-radius: 50px;" alt="Logo">
             <p>Copyright © 2024 <strong>LaPorto</strong>. All rights reserved.</p>
             <div class="social-icons">
-                <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/laportobar/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

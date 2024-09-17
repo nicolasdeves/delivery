@@ -2,10 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class CardapioController extends Controller
 {
+    public function adicionarProdutoCardapio(Request $request) {
+        Produto::create([
+            'nome'            => $request->nome,
+            'descricao'       => $request->descricao,
+            'preco'           => $request->preco,
+            'imagem'          => $request->imagem->getClientOriginalName(),
+            'tipo_produto_id' =>$request->tipo_produto_id,
+        ]);
+    }
+
+    public function excluirProdutoCardapio($id) {
+
+        \Log::info("ENTROU CONTROLLER EXLCUIR");
+
+        $produto = Produto::find($id);
+        $produto->delete();
+
+        \Log::info("PRODUTO EXCLUIDO" . $id);
+    }
+
     public function cardapio_burg()
     {
         return view('site.cardapio_burg');
