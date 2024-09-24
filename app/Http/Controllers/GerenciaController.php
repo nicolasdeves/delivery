@@ -15,8 +15,6 @@ class GerenciaController extends Controller
     public function listaCardapio()
     {
         $produtos = Produto::all();
-        \Log::info($produtos);
-
 
         return view('site/lista_cardapio', ['produtos' => $produtos]);
     }
@@ -24,6 +22,12 @@ class GerenciaController extends Controller
     public function editaExcluiCardapio()
     {
         return view('site/edita_exclui_cardapio');
+    }
+
+    public function editaCardapio($id) {
+        $produto = Produto::find($id);
+
+        return view('site/editar_cardapio', ['produto' => $produto]);
     }
 
     public function menuAdm()

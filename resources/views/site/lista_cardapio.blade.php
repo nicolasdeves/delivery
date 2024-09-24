@@ -78,7 +78,7 @@
                     @foreach ($produtos as $produto)
                         <div class="row">
                             <div class="post">
-                                <img src="{{ asset('images/' . $produto->imagem . '.jpg') }}" alt="{{ $produto->nome }}">
+                                <img src="{{ asset('storage/' . $produto->imagem ) }}" alt="{{ asset('storage/' . $produto->imagem ) }}">
                                 <h3>{{ $produto->nome }}</h3>
                                 <p>{{ $produto->descricao }}</p>
                                 <!-- Formulário para exclusão -->
@@ -88,8 +88,11 @@
                                     @method('DELETE')
                                     <button type="submit">Deletar</button>
                                 </form>
-                                <!-- Adicione link ou botão para editar -->
-                                <a href=""><button>Editar</button></a>
+
+                                <form action="{{ route('editar-excluir-cardapio', $produto->id) }}" method="GET"
+                                    style="display: inline;">
+                                    <button type="submit">Editar</button>
+                                </form>
                             </div>
                         </div>
                     @endforeach

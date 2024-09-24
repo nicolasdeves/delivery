@@ -15,3 +15,7 @@ Restaurante de apoio: La Porto; Lajeado, RS
     - Nome do banco: delivery
 
 - Rodar as migrations: `php artisan migrate`
+
+### Link simbólico para as imagens
+
+- `php artisan storage:link`
