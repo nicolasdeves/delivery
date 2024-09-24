@@ -15,7 +15,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style-adicionar.css">
+    <link rel="stylesheet" href="../../css/style-adicionar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -44,37 +44,38 @@
 
     <div class="container-add">
         <div class="form-container lora-font">
-            <h2 class="shadows-into-light-regular">Cadastro de Comidas</h2>
+            <h2 class="shadows-into-light-regular">Edição de Comidas</h2>
             <!-- Ver se funciona o php-->
             <?php
             if (isset($_GET['success']) && $_GET['success'] == 1) {
                 echo '<p class="success-message">Post cadastrado com sucesso!</p>';
             }
             ?>
-            <form method="POST" action="{{ route('produto.adicionar') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('produto.editar', $produto->id) }}" enctype="multipart/form-data">
 
                 @csrf
+                @method('PUT')
 
                 <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="nome" required>
+                <input type="text" id="titulo" name="nome" value="{{ $produto->nome }}" required>
 
                 <label for="conteudo">Descrição:</label>
-                <textarea id="conteudo" name="descricao" rows="4" required></textarea>
+                <textarea id="conteudo" name="descricao" rows="4" required>{{ $produto->descricao }}</textarea>
 
                 <label for="preco">Preço:</label>
-                <textarea id="preco" name="preco" required></textarea>
+                <textarea id="preco" name="preco" required>{{ $produto->preco }}</textarea>
 
                 <label for="opcao">Tipo:</label>
                 <select name="tipo_produto_id" id="opcoes">
-                    <option value="1">Hamburguer</option>
-                    <option value="2">Hamburguer com Fritas</option>
-                    <option value="3">Entrada</option>
-                    <option value="4">Rangos</option>
-                    <option value="5">Drinks</option>
+                    <option value="1" {{ $produto->tipo_produto_id == 1 ? 'selected' : '' }}>Hamburguer</option>
+                    <option value="2" {{ $produto->tipo_produto_id == 2 ? 'selected' : '' }}>Hamburguer com Fritas</option>
+                    <option value="3" {{ $produto->tipo_produto_id == 3 ? 'selected' : '' }}>Entrada</option>
+                    <option value="4" {{ $produto->tipo_produto_id == 4 ? 'selected' : '' }}>Rangos</option>
+                    <option value="5" {{ $produto->tipo_produto_id == 5 ? 'selected' : '' }}>Drinks</option>
                 </select>
 
                 <label for="imagem">Imagem:</label>
-                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+                <input type="file" id="imagem" name="imagem" accept="image/*" value="{{ $produto->imagem }}">
 
                 <button type="submit">Cadastrar</button>
             </form>

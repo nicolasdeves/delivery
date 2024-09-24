@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CardapioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,5 +48,16 @@ Route::prefix('/adm')->group(function () {
         Route::get('/menuAdm', [App\Http\Controllers\GerenciaController::class, 'menuAdm'])->name('menuAdm');
         Route::get('/adicionar-cardapio', [App\Http\Controllers\GerenciaController::class, 'addCardapio'])->name('adicionar-cardapio');
         Route::get('/lista-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('lista-cardapio');
+        Route::get('/editar-excluir-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('editar-excluir-cardapio');
+        Route::get('/editar-cardapio/{id}', [App\Http\Controllers\GerenciaController::class, 'editaCardapio'])->name('editar-excluir-cardapio');
     });
 });
+
+
+//CRUD Cardápio
+Route::prefix('/cardapio')->group(function(){
+    Route::post('/adicionar', [CardapioController::class, 'adicionarProdutoCardapio'])->name('produto.adicionar');
+    Route::delete('/excluir/{id}', [CardapioController::class, 'excluirProdutoCardapio'])->name('produto.excluir');
+    Route::put('/editar/{id}', [CardapioController::class, 'editarProdutoCardapio'])->name('produto.editar');
+});
+

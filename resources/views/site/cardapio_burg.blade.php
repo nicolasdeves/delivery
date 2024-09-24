@@ -42,11 +42,11 @@
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
-                    <a href="cardapio_burg.blade.php"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
-                    <a href="cardapio_burg_batata.blade.php"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
-                    <a href="cardapio_entrada.blade.php"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
-                    <a href="cardapio_rango.blade.php"><button><i class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
-                    <a href="cardapio_drink.blade.php"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
+                    <a href="#"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
+                    <a href="{{ route('cardapio_burg_batata')}}"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
+                    <a href="{{ route('cardapio_entrada') }}"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
+                    <a href="{{ route('cardapio_rango') }}"><button><i class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
+                    <a href="{{ route('cardapio_drink') }}"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
                 </div>
             </div>
         </div>

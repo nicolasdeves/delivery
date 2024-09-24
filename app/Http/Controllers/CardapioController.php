@@ -2,10 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class CardapioController extends Controller
 {
+    public function adicionarProdutoCardapio(Request $request)
+    {
+        $caminhoImagem = $request->file('imagem')->store('images', 'public');
+
+        Produto::create([
+            'nome' => $request->nome,
+            'descricao' => $request->descricao,
+            'preco' => $request->preco,
+            'imagem' => $caminhoImagem,
+            'tipo_produto_id' => $request->tipo_produto_id,
+        ]);
+
+        return redirect()->route('lista-cardapio')->with('success', 'Produto adicionado com sucesso!');
+    }
+
+    public function excluirProdutoCardapio($id)
+    {
+        $produto = Produto::find($id);
+        $produto->delete();
+    }
+
+    public function editarProdutoCardapio(Request $request, $id)
+    {
+        $caminhoImagem = $request->file('imagem')->store('images', 'public');
+
+        $produto = Produto::find($id);
+        $produto->update([
+            'nome'            => $request->nome,
+            'descricao'       => $request->descricao,
+            'preco'           => $request->preco,
+            'imagem'          => $caminhoImagem,
+            'tipo_produto_id' =>$request->tipo_produto_id,
+        ]);
+
+        return redirect()->route('lista-cardapio');
+    }
+
     public function cardapio_burg()
     {
         return view('site.cardapio_burg');
