@@ -28,8 +28,8 @@
     </div>
     <nav>
         <ul>
-            <li><a href="{{ route('inicio') }}">Início</a></li>
-            <li><a href="{{ route('cardapio_burg') }}"><u class="sublinhado">Cardápio</u></a></li>
+            <li><a href="index.blade.php">Início</a></li>
+            <li><a href="cardapio_burg.blade.php"><u class="sublinhado">Cardápio</u></a></li>
             <li><a href="#">Delivery</a></li>
             <li><a href="#">Sobre nós</a></li>
         </ul>
@@ -42,7 +42,6 @@
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
-                    <a href="{{ route('cardapio_burg') }}"><button><i class="fas fa-hamburger"></i>&nbsp;Todos</button></a>
                     <a href="#"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
                     <a href="{{ route('cardapio_burg_batata')}}"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
                     <a href="{{ route('cardapio_entrada') }}"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>

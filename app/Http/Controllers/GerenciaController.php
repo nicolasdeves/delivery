@@ -30,8 +30,16 @@ class GerenciaController extends Controller
         return view('site/editar_cardapio', ['produto' => $produto]);
     }
 
+    public function login(Request $request, $erro = null)
+    {
+        if ($erro) {
+            $erro = 'Usuário ou senha inválidos';
+        }
+        return view('site.login_user', ['erro' => $erro]);
+    }
+
     public function menuAdm()
     {
-        return view('site/menu_adm');
+        return view('adm/menu_adm');
     }
 }
