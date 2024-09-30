@@ -26,11 +26,21 @@ class CardapioController extends Controller
     {
         $produto = Produto::find($id);
         $produto->delete();
+
+        return redirect()->route('lista-cardapio');
     }
 
     public function editarProdutoCardapio(Request $request, $id)
     {
-        $caminhoImagem = $request->file('imagem')->store('images', 'public');
+
+        $caminhoImagem = $request->hasFile('imagem')
+            ? $request->file('imagem')->store('images', 'public')
+            : null;
+
+        if($caminhoImagem == null){
+            $produto = Produto::find($id);
+            $caminhoImagem = $produto->imagem;
+        }
 
         $produto = Produto::find($id);
         $produto->update([
@@ -38,7 +48,7 @@ class CardapioController extends Controller
             'descricao'       => $request->descricao,
             'preco'           => $request->preco,
             'imagem'          => $caminhoImagem,
-            'tipo_produto_id' =>$request->tipo_produto_id,
+            'tipo_produto_id' => $request->tipo_produto_id,
         ]);
 
         return redirect()->route('lista-cardapio');
