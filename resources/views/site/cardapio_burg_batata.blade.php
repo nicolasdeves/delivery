@@ -42,7 +42,6 @@
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
-                    <a href="{{ route('cardapio_burg') }}"><button><i class="fas fa-hamburger"></i>&nbsp;Todos</button></a>
                     <a href="{{ route('cardapio_burg') }}"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
                     <a href="#"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs com Batata</button> </a>
                     <a href="{{ route('cardapio_entrada') }}"><button><i class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
