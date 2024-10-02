@@ -86,12 +86,12 @@
                                     style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">Deletar</button>
+                                    <button type="submit" class="botao-sub">Deletar</button>
                                 </form>
 
                                 <form action="{{ route('editar-excluir-cardapio', $produto->id) }}" method="GET"
                                     style="display: inline;">
-                                    <button type="submit">Editar</button>
+                                    <button type="submit" class="botao-sub">Editar</button>
                                 </form>
                             </div>
                         </div>
