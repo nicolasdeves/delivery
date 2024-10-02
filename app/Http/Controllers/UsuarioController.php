@@ -31,4 +31,12 @@ class UsuarioController extends Controller
         
         return redirect()->route('inicio');
     }
+
+    public function login(Request $request, $erro = null)
+    {
+        if ($erro) {
+            $erro = 'Usuário ou senha inválidos';
+        }
+        return view('site.login_user', ['erro' => $erro]);
+    }
 }

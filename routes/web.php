@@ -17,6 +17,9 @@ use App\Http\Controllers\CardapioController;
 //Rota da página inicial
 Route::get('/home', [App\Http\Controllers\InicioController::class, 'inicio'])->name('inicio');
 
+//Rota do sobre nós
+Route::get('/sobre-nos', [App\Http\Controllers\InicioController::class, 'sobre_nos'])->name('sobre_nos');
+
 
 // Rotas do cardápio
 Route::prefix('/cardapio')->group(function () {
@@ -27,15 +30,14 @@ Route::prefix('/cardapio')->group(function () {
     Route::get('/drink', [App\Http\Controllers\CardapioController::class, 'cardapio_drink'])->name('cardapio_drink');
 });
 
-//Login de usuário normal
-Route::get('/login', [App\Http\Controllers\GerenciaController::class, 'login'])->name('login_user');
-
 Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
 
+
 //Rotas delivery
-Route::prefix('/delivery')->group(function(){
+Route::prefix('/delivery')->group(function () {
     Route::get('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registroUsuario'])->name('registro-usuario');
     Route::post('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registrar'])->name('registrar-usuario');
+    Route::get('/login', [App\Http\Controllers\UsuarioController::class, 'login'])->name('login_user');
 });
 
 
@@ -55,9 +57,8 @@ Route::prefix('/adm')->group(function () {
 
 
 //CRUD Cardápio
-Route::prefix('/cardapio')->group(function(){
+Route::prefix('/cardapio')->group(function () {
     Route::post('/adicionar', [CardapioController::class, 'adicionarProdutoCardapio'])->name('produto.adicionar');
     Route::delete('/excluir/{id}', [CardapioController::class, 'excluirProdutoCardapio'])->name('produto.excluir');
     Route::put('/editar/{id}', [CardapioController::class, 'editarProdutoCardapio'])->name('produto.editar');
 });
-

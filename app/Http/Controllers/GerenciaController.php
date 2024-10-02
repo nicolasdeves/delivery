@@ -9,34 +9,25 @@ class GerenciaController extends Controller
 {
     public function addCardapio()
     {
-        return view('site/add_cardapio');
+        return view('adm/add_cardapio');
     }
 
+
+    // ARRUMAR ESSA CARAIA
     public function listaCardapio()
     {
         $produtos = Produto::all();
 
-        return view('site/lista_cardapio', ['produtos' => $produtos]);
-    }
-
-    public function editaExcluiCardapio()
-    {
-        return view('site/edita_exclui_cardapio');
+        return view('adm/lista_cardapio', ['produtos' => $produtos]);
     }
 
     public function editaCardapio($id) {
         $produto = Produto::find($id);
 
-        return view('site/editar_cardapio', ['produto' => $produto]);
+        return view('adm/editar_cardapio', ['produto' => $produto]);
     }
 
-    public function login(Request $request, $erro = null)
-    {
-        if ($erro) {
-            $erro = 'Usuário ou senha inválidos';
-        }
-        return view('site.login_user', ['erro' => $erro]);
-    }
+    
 
     public function menuAdm()
     {
