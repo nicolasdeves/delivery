@@ -91,9 +91,9 @@
     </div>
 
     <div class="map-text-wrapper container">
-        <div class="text-section lora-font">
-            <h2 class="shadows-into-light-regular">Visite-nos no LaPorto!</h2>
-            <p>Descubra o ambiente incrível de nossa hamburgueria, pub e barbearia. Estamos localizados em um ponto de
+        <div class="text-section lora-font pj text-center">
+            <h2 class="shadows-into-light-regular pj">Visite-nos no LaPorto!</h2>
+            <p class="pj">Descubra o ambiente incrível de nossa hamburgueria, pub e barbearia. Estamos localizados em um ponto de
                 fácil acesso, esperando por você para uma experiência inesquecível. Clique no mapa para ver a rota
                 completa.</p>
         </div>
