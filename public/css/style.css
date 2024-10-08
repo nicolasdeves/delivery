@@ -156,6 +156,14 @@ footer {
     margin-bottom: 120px;
 }
 
+.map-sobre-nos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+    margin-bottom: 120px;
+}
+
 .text-section {
     width: 40%;
 }
@@ -178,6 +186,29 @@ footer {
     position: relative;
     height: 0;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.imagem-sobre-nos {
+    width: 40%;
+    overflow: hidden;
+    padding-bottom: 25%;
+    position: relative;
+    height: 0;
+    
+}
+
+.imagem-sobre-nos img {
+    width: 100%;
+    border-radius: 50% 0 50% 0; 
+    clip-path: ellipse(75% 70% at 50% 40%); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagem-sobre-nos2 img {
+    width: 100%;
+    width: 600px;
+    border-radius: 50% 0 50% 0; 
+    clip-path: ellipse(70% 85% at 50% 40%); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

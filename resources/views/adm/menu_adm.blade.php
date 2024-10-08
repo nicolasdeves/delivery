@@ -35,10 +35,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/"><u class="sublinhado">Início</u></a></li>
-                <li><a href="/cardapio/burger">Cardápio</a></li>
+                <li><a href="{{ route('inicio') }}"><u class="sublinhado">Início</u></a></li>
+                <li><a href="{{ route('cardapio_burg') }}">Cardápio</a></li>
                 <li><a href="#">Delivery</a></li>
-                <li><a href="#">Sobre nós</a></li>
+                <li><a href="{{ route('sobre_nos') }}">Sobre nós</a></li>
             </ul>
         </nav>
     </header>
