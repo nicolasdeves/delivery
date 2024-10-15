@@ -7,7 +7,7 @@ use App\Http\Middleware\LoginAdmMiddleware;
 
 class LoginAdmController extends Controller
 {
-    public function login(Request $request, $erro = null)
+    public function loginAdm(Request $request, $erro = null)
     {
 
         if ($erro) {

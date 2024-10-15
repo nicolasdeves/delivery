@@ -21,16 +21,15 @@
         <div class="login-box">
             <h1 class="logo shadows-into-light-regular">LaPorto</h1>
             <p class="welcome-message">Bem-vindo de volta! Faça login para acessar o painel.</p>
-            <form action={{ route ('autenticar')}} method="POST" class="login-form">
+            <form action={{ route ('autenticar-usuario')}} method="POST" class="login-form">
                 @csrf
-                <input type="text" placeholder="Email" name="usuario" required>
-                <input type="password" placeholder="Senha" name="senha" required>
+                <input type="text" placeholder="CPF" name="cpf" required>
                 <button type="submit">Entrar</button>
                 <p class="signup-link">Não tem uma conta? <a href="#">Crie uma agora</a></p>
             </form>
-            @if($erro != '')
+            {{-- @if($erro != '')
             <div style="color: red;">{{ $erro }}</div>
-            @endif
+            @endif --}}
         </div>
     </div>
     </div>
