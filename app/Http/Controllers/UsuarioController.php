@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
@@ -29,14 +30,29 @@ class UsuarioController extends Controller
             'cpf' => $request->input('cpf')
         ]);
         
-        return redirect()->route('inicio');
+        return redirect()->route('delivery/login');
     }
 
-    public function login(Request $request, $erro = null)
+    public function login()
     {
-        if ($erro) {
-            $erro = 'Usuário ou senha inválidos';
+        return view('delivery/login_user');
+    }
+
+    public function autenticarUsuario(Request $request)
+    {
+        if($request->cpf){
+            $usuario= Usuario::where('cpf', $request->cpf)->first();
+            if($usuario){
+                Auth::login($usuario);
+                return redirect()->route('inicio-delivery');
+            }
         }
-        return view('site.login_user', ['erro' => $erro]);
+/*         $erro = 'Usuário ou senha inválidos';
+ */        return view('delivery/login_user');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

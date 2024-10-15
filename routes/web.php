@@ -38,12 +38,17 @@ Route::prefix('/delivery')->group(function () {
     Route::get('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registroUsuario'])->name('registro-usuario');
     Route::post('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registrar'])->name('registrar-usuario');
     Route::get('/login', [App\Http\Controllers\UsuarioController::class, 'login'])->name('login_user');
+    Route::post('/login', [App\Http\Controllers\UsuarioController::class, 'autenticarUsuario'])->name('autenticar-usuario');
+
+    Route::middleware(['auth'])->group(function () {
+    Route::get('/inicio', [App\Http\Controllers\InicioController::class, 'inicioDelivery'])->name('inicio-delivery');
+    });
 });
 
 
 //Administração // Gerenciamento
 Route::prefix('/adm')->group(function () {
-    Route::get('/loginAdm/{erro?}', [App\Http\Controllers\LoginAdmController::class, 'login'])->name('loginAdm');
+    Route::get('/loginAdm/{erro?}', [App\Http\Controllers\LoginAdmController::class, 'loginAdm'])->name('loginAdm');
     Route::post('/loginAdm', [App\Http\Controllers\LoginAdmController::class, 'autenticar'])->name('autenticar');
 
     Route::middleware(['checkLoginAdm'])->group(function () {
