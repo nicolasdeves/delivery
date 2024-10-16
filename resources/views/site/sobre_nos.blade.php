@@ -38,7 +38,7 @@
             <ul>
                 <li><a href="{{ route('inicio') }}">Início</a></li>
                 <li><a href="{{ route('cardapio_burg') }}">Cardápio</a></li>
-                <li><a href="#">Delivery</a></li>
+                <li><a href="{{ route('delivery')}}">Delivery</a></li>
                 <li><a href="{{ route('sobre_nos') }}"><u class="sublinhado">Sobre nós</u></a></li>
             </ul>
         </nav>
@@ -71,7 +71,7 @@
                 experiência única de pub para a região, o La Porto rapidamente se tornou conhecido por seus hambúrgueres
                 artesanais, drinks exclusivos e serviço de delivery, ideal para quem busca conforto sem sair de casa.</p>
 
-                <p class='pj'>O La Porto combina a autenticidade de um pub clássico com um toque moderno, criando um espaço perfeito
+            <p class='pj'>O La Porto combina a autenticidade de um pub clássico com um toque moderno, criando um espaço perfeito
                 tanto para quem deseja aproveitar a noite com amigos quanto para quem busca uma refeição saborosa no
                 conforto de sua casa. Desde sua abertura, o estabelecimento vem cativando o público com seu cardápio
                 variado e o ambiente vibrante, que faz jus ao título de pub.</p>
