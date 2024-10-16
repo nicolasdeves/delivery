@@ -34,7 +34,7 @@
         <ul>
             <li><a href="{{ route('inicio') }}">Início</a></li>
             <li><a href="{{ route('cardapio_burg') }}"><u class="sublinhado">Cardápio</u></a></li>
-            <li><a href="#">Delivery</a></li>
+            <li><a href="{{ route('delivery')}}">Delivery</a></li>
             <li><a href="{{ route('sobre_nos') }}">Sobre nós</a></li>
         </ul>
     </nav>
@@ -47,23 +47,23 @@
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
                     <a href="{{ route('cardapio_burg') }}"><button><i
-                                class="fas fa-hamburger"></i>&nbsp;Todos</button></a>
-                    <a href="cardapio_burg.blade.php"><button class="active"><i
-                                class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
-                    <a href="cardapio_burg_batata.blade.php"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com
-                            Batata</button> </a>
-                    <a href="cardapio_entrada.blade.php"><button><i
-                                class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
-                    <a href="cardapio_rango.blade.php"><button><i
-                                class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
-                    <a href="cardapio_drink.blade.php"><button><i
-                                class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
-                </div>
-            </div> --}}
+                    class="fas fa-hamburger"></i>&nbsp;Todos</button></a>
+            <a href="cardapio_burg.blade.php"><button class="active"><i
+                        class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
+            <a href="cardapio_burg_batata.blade.php"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com
+                    Batata</button> </a>
+            <a href="cardapio_entrada.blade.php"><button><i
+                        class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
+            <a href="cardapio_rango.blade.php"><button><i
+                        class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
+            <a href="cardapio_drink.blade.php"><button><i
+                        class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
         </div>
-        <div class="content">
+    </div> --}}
+    </div>
+    <div class="content">
 
-            {{-- <div class="row">
+        {{-- <div class="row">
                 <div class="post">
                     <img src="../images/hamburguer2.jpg" alt="">
                     <h3>Hamburguer Pão e Ovo</h3>
@@ -73,36 +73,36 @@
                     <a href="#"><button>Deletar</button></a>
                 </div>
             </div> --}}
-            <div class="content">
-                <div class="posts lora-font">
-                    @foreach ($produtos as $produto)
-                        <div class="row">
-                            <div class="post">
-                                <img src="{{ asset('storage/' . $produto->imagem ) }}" alt="{{ asset('storage/' . $produto->imagem ) }}">
-                                <h3>{{ $produto->nome }}</h3>
-                                <p>{{ $produto->descricao }}</p>
-                                <!-- Formulário para exclusão -->
-                                <form action="{{ route('produto.excluir', $produto->id) }}" method="POST"
-                                    style="display: inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="botao-sub">Deletar</button>
-                                </form>
+        <div class="content">
+            <div class="posts lora-font">
+                @foreach ($produtos as $produto)
+                <div class="row">
+                    <div class="post">
+                        <img src="{{ asset('storage/' . $produto->imagem ) }}" alt="{{ asset('storage/' . $produto->imagem ) }}">
+                        <h3>{{ $produto->nome }}</h3>
+                        <p>{{ $produto->descricao }}</p>
+                        <!-- Formulário para exclusão -->
+                        <form action="{{ route('produto.excluir', $produto->id) }}" method="POST"
+                            style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="botao-sub">Deletar</button>
+                        </form>
 
-                                <form action="{{ route('editar-excluir-cardapio', $produto->id) }}" method="GET"
-                                    style="display: inline;">
-                                    <button type="submit" class="botao-sub">Editar</button>
-                                </form>
-                            </div>
-                        </div>
-                    @endforeach
-
+                        <form action="{{ route('editar-excluir-cardapio', $produto->id) }}" method="GET"
+                            style="display: inline;">
+                            <button type="submit" class="botao-sub">Editar</button>
+                        </form>
+                    </div>
                 </div>
+                @endforeach
+
             </div>
-
-
-
         </div>
+
+
+
+    </div>
     </div>
 
     <footer class="footer">
