@@ -10,22 +10,24 @@ function fecharCarrinho() {
 // adicionar itens ao carrinho
 let carrinho = [];
 
-function adicionarAoCarrinho(nomeProduto, precoProduto) {
-    carrinho.push({ nome: nomeProduto, preco: precoProduto, quantidade: 1 });
+function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
+    carrinho.push({ nome: nomeProduto, preco: precoProduto, quantidade: 1, imagem: imagemProduto });
     atualizarCarrinho();
 }
 
 function atualizarCarrinho() {
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
-    cartItems.innerHTML = ''; 
+    cartItems.innerHTML = '';
 
     let total = 0;
-    
+
     carrinho.forEach(item => {
+        //Criação do HTML de cada item do carrinho (Cuida para não bugar essa poha)
         const itemElement = `
+        <hr>
             <div class="cart-item">
-                <img src="URL_DA_IMAGEM" alt="Imagem do Produto" class="cart-item-img">
+                <img src="${item.imagem}" alt="Imagem do Produto" class="cart-item-img">
                 <div class="cart-item-details">
                     <h4 class="cart-item-name">${item.nome}</h4>
                     <p class="cart-item-price">R$${item.preco.toFixed(2)}</p>
@@ -42,12 +44,14 @@ function atualizarCarrinho() {
 }
 
 function removerDoCarrinho(nomeProduto) {
+    //Remove o item do carrinho pelo nome, como o nome vai ser único, não tem problema
     carrinho = carrinho.filter(item => item.nome !== nomeProduto);
     atualizarCarrinho();
 }
+
 function calcularTotal() {
     let total = 0;
-    document.querySelectorAll(".cart-item-price").forEach(function(item) {
+    document.querySelectorAll(".cart-item-price").forEach(function (item) {
         let preco = parseFloat(item.textContent.replace('R$', ''));
         total += preco;
     });

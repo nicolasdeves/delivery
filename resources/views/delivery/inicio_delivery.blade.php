@@ -46,20 +46,20 @@
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
-                    <a href="#"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
-                    <a href="{{ route('cardapio_burg_batata')}}"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com
+                    <a href="#burgs"><button class="active"><i class="fas fa-hamburger"></i>&nbsp;Burgs</button></a>
+                    <a href="#burgsBatata"><button><i class="fas fa-hamburger"></i>&nbsp;Burgs com
                             Batata</button> </a>
-                    <a href="{{ route('cardapio_entrada') }}"><button><i
+                    <a href="#entradas"><button><i
                                 class="fa-solid fa-bacon"></i>&nbsp;Entradas</button></a>
-                    <a href="{{ route('cardapio_rango') }}"><button><i
+                    <a href="#rangos"><button><i
                                 class="fa-solid fa-drumstick-bite"></i>&nbsp;Rangos</button></a>
-                    <a href="{{ route('cardapio_drink') }}"><button><i
+                    <a href="#drinks"><button><i
                                 class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
                 </div>
             </div>
         </div>
         <div class="content">
-            <h1 class="lora-font" style="font-weight:bold;">Burgs</h1>
+            <h1 id="burgs" class="lora-font" style="font-weight:bold;">Burgs</h1>
             <div class="posts lora-font">
                 <div class="row">
                     <div class="post ">
@@ -68,7 +68,7 @@
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne
                             bovina.</p>
                         <p class="preco_produto" style="display:inline;">R$43,52</p>
-                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52, '../images/hamburguer1.jpg')">Adicionar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <hr>
-            <h1 class="lora-font" style="font-weight:bold;">Burgs com Batata</h1>
+            <h1 id="burgsBatata" class="lora-font" style="font-weight:bold;">Burgs com Batata</h1>
             <div class="posts lora-font">
                 <div class="row">
                     <div class="post ">
@@ -111,8 +111,8 @@
                         <h3>Hamburguer Pão e Ovo com 100g de Batata Frita</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne
                             bovina.</p>
-                            <p class="preco_produto" style="display:inline;">R$54,20</p>
-                            <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
+                        <p class="preco_produto" style="display:inline;">R$54,20</p>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -121,8 +121,8 @@
                         <h3>Hamburguer Pão e Ovo com 100g de Batata Frita</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne
                             bovina.</p>
-                            <p class="preco_produto" style="display:inline;">R$54,20</p>
-                            <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
+                        <p class="preco_produto" style="display:inline;">R$54,20</p>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -131,8 +131,8 @@
                         <h3>Hamburguer Pão e Ovo com 100g de Batata Frita</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne
                             bovina.</p>
-                            <p class="preco_produto" style="display:inline;">R$54,20</p>
-                            <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
+                        <p class="preco_produto" style="display:inline;">R$54,20</p>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -141,13 +141,13 @@
                         <h3>Hamburguer Pão e Ovo com 100g de Batata Frita</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne
                             bovina.</p>
-                            <p class="preco_produto" style="display:inline;">R$54,20</p>
-                            <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
+                        <p class="preco_produto" style="display:inline;">R$54,20</p>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 43.52)">Adicionar</button>
                     </div>
                 </div>
             </div>
             <hr>
-            <h1 class="lora-font" style="font-weight:bold;">Entradas</h1>
+            <h1 id="entradas" class="lora-font" style="font-weight:bold;">Entradas</h1>
             <div class="posts lora-font">
                 <div class="row">
                     <div class="post ">
@@ -164,7 +164,7 @@
                         <h3>Fritas com Cheddar e Bacon</h3>
                         <p>400g de batata frita, banhadas ao cheddar juntamente com pedaços de bacon e temperos.</p>
                         <p class="preco_produto" style="display:inline;">R$30,00</p>
-                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Fritas com Cheddar e Bacon', 30.00)">Adicionar</button>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Fritas com Cheddar e Bacon', 30.00,'../images/batata2.jpg')">Adicionar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -182,14 +182,14 @@
                         <h3>Hamburguer Pão e Ovo</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne
                             bovina.</p>
-                            <p class="preco_produto" style="display:inline;">R$30,00</p>
-                            <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 30.00)">Adicionar</button>
+                        <p class="preco_produto" style="display:inline;">R$30,00</p>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Hamburguer Pão e Ovo', 30.00)">Adicionar</button>
                     </div>
                 </div>
             </div>
             <hr>
-        <h1 class="lora-font" style="font-weight:bold;">Rangos</h1>
-        <div class="posts lora-font">
+            <h1 id="rangos" class="lora-font" style="font-weight:bold;">Rangos</h1>
+            <div class="posts lora-font">
                 <div class="row">
                     <div class="post ">
                         <img src="../images/batata1.jpg" alt="">
@@ -228,7 +228,7 @@
                 </div>
             </div>
             <hr>
-            <h1 class="lora-font" style="font-weight:bold;">Drinks</h1>
+            <h1 id="drinks" class="lora-font" style="font-weight:bold;">Drinks</h1>
             <div class="posts lora-font">
                 <div class="row">
                     <div class="post ">
@@ -263,8 +263,8 @@
                         <h3>Hamburguer Pão e Ovo</h3>
                         <p>O hamburguer possui ovo, queijo, bacon, picles, molho especial, cebola roxa e 140g de carne
                             bovina.</p>
-                            <p class="preco_produto" style="display:inline;">R$30,00</p>
-                            <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Fritas com Cheddar e Bacon', 30.00)">Adicionar</button>
+                        <p class="preco_produto" style="display:inline;">R$30,00</p>
+                        <button class="botao-add-carrinho" onclick="adicionarAoCarrinho('Fritas com Cheddar e Bacon', 30.00)">Adicionar</button>
                     </div>
                 </div>
             </div>
@@ -275,26 +275,26 @@
         <i class="fas fa-shopping-cart"></i>
     </button>
 
-    
+
     <div id="cartSidebar" class="cart-sidebar">
-    <a href="javascript:void(0)" class="close-btn" onclick="fecharCarrinho()">&times;</a>
-    <h2>Seu Carrinho</h2>
-    <div class="cart-items" id="cartItems">
-        <div class="cart-item">
-            <!-- Itens do carrinho -->
+        <a href="javascript:void(0)" class="close-btn" onclick="fecharCarrinho()">&times;</a>
+        <h2>Seu Carrinho</h2>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-item">
+                <!-- Itens do carrinho -->
+            </div>
+
         </div>
-     
-    </div>
-    <button class="cart-btn" onclick="abrirCarrinho()">
-    <i class="fas fa-shopping-cart"></i> <span class="cart-btn-text">Ver Carrinho</span>
-</button>
+        <button class="cart-btn" onclick="abrirCarrinho()">
+            <i class="fas fa-shopping-cart"></i> <span class="cart-btn-text">Ver Carrinho</span>
+        </button>
 
 
-    <div class="cart-footer">
-        <p>Total: <span id="cartTotal">R$0,00</span></p>
-        <button class="btn btn-primary finalizar-compra-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+        <div class="cart-footer">
+            <p>Total: <span id="cartTotal">R$0,00</span></p>
+            <button class="btn btn-primary finalizar-compra-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
     </div>
-</div>
 
     <footer class="footer">
         <div class="container d-flex justify-content-between align-items-center lora-font" style="padding: 0px 0;"> <img
