@@ -20,10 +20,6 @@ Route::get('/home', [App\Http\Controllers\InicioController::class, 'inicio'])->n
 //Rota do sobre nós
 Route::get('/sobre-nos', [App\Http\Controllers\InicioController::class, 'sobre_nos'])->name('sobre_nos');
 
-//Rota do delivery
-Route::get('/delivery', [App\Http\Controllers\DeliveryController::class, 'delivery'])->name('delivery');
-
-
 // Rotas do cardápio
 Route::prefix('/cardapio')->group(function () {
     Route::get('/burger', [App\Http\Controllers\CardapioController::class, 'cardapio_burg'])->name('cardapio_burg');
@@ -44,7 +40,7 @@ Route::prefix('/delivery')->group(function () {
     Route::post('/login', [App\Http\Controllers\UsuarioController::class, 'autenticarUsuario'])->name('autenticar-usuario');
 
     Route::middleware(['auth'])->group(function () {
-        Route::get('/inicio', [App\Http\Controllers\InicioController::class, 'inicioDelivery'])->name('inicio-delivery');
+        Route::get('/inicio', [App\Http\Controllers\DeliveryController::class, 'delivery'])->name('inicio-delivery');
     });
 });
 
