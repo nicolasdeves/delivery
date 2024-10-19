@@ -18,29 +18,11 @@
     <link rel="stylesheet" href="../css/style-cardapio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<header class="lora-font">
-    <div class="top-bar">
-        <div class="contact-info">
-            <span><i class="fas fa-phone-alt"></i> +55 51 997023202</span>
-            <span><i class="fas fa-envelope"></i> laporto@gmail.com.br</span>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/laportobar/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="{{ route('inicio') }}">Início</a></li>
-            <li><a href="{{ route('cardapio_burg') }}"><u class="sublinhado">Cardápio</u></a></li>
-            <li><a href="{{ route('delivery')}}">Delivery</a></li>
-            <li><a href="{{ route('sobre_nos') }}">Sobre nós</a></li>
-        </ul>
-    </nav>
-</header>
 
 <body>
+
+    @include('templates.header')
+
     <div class="container">
         <div class="sidebar">
             <div class="categorias">
@@ -97,17 +79,7 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container d-flex justify-content-between align-items-center lora-font " style="padding: 0px 0;">
-            <img src="../images/laporto.jpg" width="40px" height="40px" style="border-radius: 50px;" alt="Logo">
-            <p>Copyright © 2024 <strong>LaPorto</strong>. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/laportobar/" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
+    @include('templates.footer')
 </body>
 
 </html>
