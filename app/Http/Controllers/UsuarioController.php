@@ -22,7 +22,6 @@ class UsuarioController extends Controller
             'cpf' => 'required|string|max:14|unique:usuario,cpf',
         ]);
 
-
         $usuario = Usuario::create([
             'nome' => $request->input('nome'),
             'email' => $request->input('email'),

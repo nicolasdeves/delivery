@@ -21,10 +21,6 @@ Route::get('/home', [App\Http\Controllers\InicioController::class, 'inicio'])->n
 //Rota do sobre nós
 Route::get('/sobre-nos', [App\Http\Controllers\InicioController::class, 'sobre_nos'])->name('sobre_nos');
 
-//Rota do delivery
-Route::get('/delivery', [App\Http\Controllers\DeliveryController::class, 'delivery'])->name('delivery');
-
-
 // Rotas do cardápio
 // Route::prefix('/cardapio')->group(function () {
 //     Route::get('/burger', [App\Http\Controllers\CardapioController::class, 'cardapio_burg'])->name('cardapio_burg');
@@ -47,9 +43,7 @@ Route::prefix('/delivery')->group(function () {
     Route::post('/login', [App\Http\Controllers\UsuarioController::class, 'autenticarUsuario'])->name('autenticar-usuario');
     Route::post('/finalizar-pedido', [DeliveryController::class, 'finalizarPedido'])->name('finalizar.pedido');
 
-    Route::middleware(['auth'])->group(function () {
-        Route::get('/inicio', [App\Http\Controllers\InicioController::class, 'inicioDelivery'])->name('inicio-delivery');
-    });
+    Route::get('/inicio', [App\Http\Controllers\DeliveryController::class, 'inicioDelivery'])->name('inicio-delivery');
 });
 
 
@@ -64,6 +58,11 @@ Route::prefix('/adm')->group(function () {
         Route::get('/lista-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('lista-cardapio');
         Route::get('/editar-excluir-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('editar-excluir-cardapio');
         Route::get('/editar-cardapio/{id}', [App\Http\Controllers\GerenciaController::class, 'editaCardapio'])->name('editar-excluir-cardapio');
+        Route::get('/gerenciar-usuarios', [App\Http\Controllers\GerenciarUsuariosController::class, 'listarUsuarios'])->name('gerenciar-usuarios');
+        Route::delete('/gerenciar-usuarios/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'deletarUsuario'])->name('deletar-usuario');
+        Route::get('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'editarUsuario'])->name('editar-usuario');
+        Route::put('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'atualizarUsuario'])->name('atualizar-usuario');
+
     });
 });
 

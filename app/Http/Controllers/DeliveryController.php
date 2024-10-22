@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class DeliveryController extends Controller
 {
-
-    public function delivery()
+    public function inicioDelivery()
     {
         $produtos = Produto::all();
 
