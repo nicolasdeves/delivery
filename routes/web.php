@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardapioController;
+use App\Http\Controllers\DeliveryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +26,15 @@ Route::get('/delivery', [App\Http\Controllers\DeliveryController::class, 'delive
 
 
 // Rotas do cardápio
-Route::prefix('/cardapio')->group(function () {
-    Route::get('/burger', [App\Http\Controllers\CardapioController::class, 'cardapio_burg'])->name('cardapio_burg');
-    Route::get('/burgerBatata', [App\Http\Controllers\CardapioController::class, 'cardapio_burg_batata'])->name('cardapio_burg_batata');
-    Route::get('/entrada', [App\Http\Controllers\CardapioController::class, 'cardapio_entrada'])->name('cardapio_entrada');
-    Route::get('/rango', [App\Http\Controllers\CardapioController::class, 'cardapio_rango'])->name('cardapio_rango');
-    Route::get('/drink', [App\Http\Controllers\CardapioController::class, 'cardapio_drink'])->name('cardapio_drink');
-});
+// Route::prefix('/cardapio')->group(function () {
+//     Route::get('/burger', [App\Http\Controllers\CardapioController::class, 'cardapio_burg'])->name('cardapio_burg');
+//     Route::get('/burgerBatata', [App\Http\Controllers\CardapioController::class, 'cardapio_burg_batata'])->name('cardapio_burg_batata');
+//     Route::get('/entrada', [App\Http\Controllers\CardapioController::class, 'cardapio_entrada'])->name('cardapio_entrada');
+//     Route::get('/rango', [App\Http\Controllers\CardapioController::class, 'cardapio_rango'])->name('cardapio_rango');
+//     Route::get('/drink', [App\Http\Controllers\CardapioController::class, 'cardapio_drink'])->name('cardapio_drink');
+// });
+
+Route::get('/cardapio', [App\Http\Controllers\CardapioController::class, 'cardapio'])->name('cardapio');
 
 Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
 
@@ -42,6 +45,7 @@ Route::prefix('/delivery')->group(function () {
     Route::post('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registrar'])->name('registrar-usuario');
     Route::get('/login', [App\Http\Controllers\UsuarioController::class, 'login'])->name('login_user');
     Route::post('/login', [App\Http\Controllers\UsuarioController::class, 'autenticarUsuario'])->name('autenticar-usuario');
+    Route::post('/finalizar-pedido', [DeliveryController::class, 'finalizarPedido'])->name('finalizar.pedido');
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/inicio', [App\Http\Controllers\InicioController::class, 'inicioDelivery'])->name('inicio-delivery');
