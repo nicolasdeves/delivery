@@ -16,7 +16,7 @@
         <ul>
             <li><a href="{{ route('inicio') }}">Início</a></li>
             <li><a href="{{ route('cardapio') }}">Cardápio</a></li>
-            <li><a href="{{ route('delivery')}}">Delivery</a></li>
+            <li><a href="{{ route('inicio-delivery')}}">Delivery</a></li>
             <li><a href="{{ route('sobre_nos') }}"><u class="sublinhado">Sobre nós</u></a></li>
         </ul>
     </nav>

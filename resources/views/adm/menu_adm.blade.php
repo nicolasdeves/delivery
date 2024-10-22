@@ -21,28 +21,6 @@
 </head>
 
 <body>
-    <header class="lora-font">
-        <div class="top-bar">
-            <div class="contact-info">
-                <span><i class="fas fa-phone-alt"></i> +55 51 997023202</span>
-                <span><i class="fas fa-envelope"></i> laporto@gmail.com.br</span>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/laportobar/" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="{{ route('inicio') }}"><u class="sublinhado">Início</u></a></li>
-                <li><a href="{{ route('cardapio_burg') }}">Cardápio</a></li>
-                <li><a href="{{ route('inicio-delivery')}}">Delivery</a></li>
-                <li><a href="{{ route('sobre_nos') }}">Sobre nós</a></li>
-            </ul>
-        </nav>
-    </header>
-
 
     @include('templates.header')
 
@@ -66,7 +44,7 @@
             </div>
             <div class="menu-item">
                 <h3>Gerenciar Usuários</h3>
-                <a href="#">Usuários</a>
+                <a href="gerenciar-usuarios">Usuários</a>
             </div>
             <div class="menu-item">
                 <h3>Reserva de Mesas</h3>
