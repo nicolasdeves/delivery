@@ -54,6 +54,11 @@ class CardapioController extends Controller
         return redirect()->route('lista-cardapio');
     }
 
+    public function cardapio()
+    {
+        return view('site.cardapio');
+    }
+
     public function cardapio_burg()
     {
         return view('site.cardapio_burg');
