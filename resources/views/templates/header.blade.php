@@ -5,7 +5,7 @@
             <span><i class="fas fa-envelope"></i> laporto@gmail.com.br</span>
         </div>
         <div class="social-icons">
-            <a href="/adm/loginAdm" title="Área do Administrador"><i class="fas fa-user"></i></a>
+            <a href="/adm/loginAdm" title="Área do Administrador"><i class="fas fa-lock"></i></a>
 
             <a href="https://www.facebook.com/people/LaPorto/100063575576619/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 
@@ -15,7 +15,7 @@
     <nav>
         <ul>
             <li><a href="{{ route('inicio') }}">Início</a></li>
-            <li><a href="{{ route('cardapio_burg') }}">Cardápio</a></li>
+            <li><a href="{{ route('cardapio') }}">Cardápio</a></li>
             <li><a href="{{ route('delivery')}}">Delivery</a></li>
             <li><a href="{{ route('sobre_nos') }}"><u class="sublinhado">Sobre nós</u></a></li>
         </ul>

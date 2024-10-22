@@ -10,8 +10,8 @@ function fecharCarrinho() {
 // adicionar itens ao carrinho
 let carrinho = [];
 
-function adicionarAoCarrinho(nomeProduto, precoProduto, imagemProduto) {
-    carrinho.push({ nome: nomeProduto, preco: precoProduto, quantidade: 1, imagem: imagemProduto });
+function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto) {
+    carrinho.push({ id: idProduto, nome: nomeProduto, preco: precoProduto, quantidade: 1, imagem: imagemProduto });
     atualizarCarrinho();
 }
 
@@ -30,7 +30,7 @@ function atualizarCarrinho() {
                 <img src="${item.imagem}" alt="Imagem do Produto" class="cart-item-img">
                 <div class="cart-item-details">
                     <h4 class="cart-item-name">${item.nome}</h4>
-                    <p class="cart-item-price">R$${item.preco.toFixed(2)}</p>
+                    <p class="cart-item-price">R$${item.preco}</p>
                     <p class="cart-item-quantidade">Quantidade: ${item.quantidade}</p>
                     <p class="cart-item-remove" onclick="removerDoCarrinho('${item.nome}')">Remover</p>
                 </div>
@@ -57,3 +57,24 @@ function calcularTotal() {
     });
     document.getElementById("cartTotal").textContent = "R$" + total.toFixed(2);
 }
+
+function finalizarPedido() {
+    const carrinhoData = carrinho;
+
+    fetch('/delivery/finalizar-pedido', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify({ carrinho: carrinhoData })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+}
+
