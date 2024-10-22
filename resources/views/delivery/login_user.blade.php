@@ -25,7 +25,7 @@
                 @csrf
                 <input type="text" placeholder="CPF" name="cpf" required>
                 <button type="submit">Entrar</button>
-                <p class="signup-link">Não tem uma conta? <a href="#">Crie uma agora</a></p>
+                <p class="signup-link">Não tem uma conta? <a href="{{ route('registro-usuario')}}">Crie uma agora</a></p>
             </form>
             {{-- @if($erro != '')
             <div style="color: red;">{{ $erro }}</div>

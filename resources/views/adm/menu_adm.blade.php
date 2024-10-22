@@ -37,7 +37,7 @@
             <ul>
                 <li><a href="{{ route('inicio') }}"><u class="sublinhado">Início</u></a></li>
                 <li><a href="{{ route('cardapio_burg') }}">Cardápio</a></li>
-                <li><a href="{{ route('delivery')}}">Delivery</a></li>
+                <li><a href="{{ route('inicio-delivery')}}">Delivery</a></li>
                 <li><a href="{{ route('sobre_nos') }}">Sobre nós</a></li>
             </ul>
         </nav>
