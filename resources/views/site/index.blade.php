@@ -52,7 +52,7 @@
                     <div class="card-content">
                         <h3>Delivery</h3>
                         <p>Faça o seu pedido e deguste ele no conforto de sua casa.</p>
-                        <a href="#" class="learn-more">Delivery <i class="fas fa-arrow-right"></i></a>
+                        <a href="{{ route('inicio-delivery') }}" class="learn-more">Delivery <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

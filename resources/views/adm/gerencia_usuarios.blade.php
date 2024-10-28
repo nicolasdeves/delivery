@@ -7,6 +7,10 @@
 </head>
 <body>
     <h1>Lista de Usuários</h1>
+
+    <button onclick="window.location.href='{{ route('registro-usuario') }}'">Cadastrar usuário</button>
+
+
     <ul id="user-list">
         @foreach($users as $user)
         <li>

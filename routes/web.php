@@ -41,9 +41,17 @@ Route::prefix('/delivery')->group(function () {
     Route::post('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registrar'])->name('registrar-usuario');
     Route::get('/login', [App\Http\Controllers\UsuarioController::class, 'login'])->name('login_user');
     Route::post('/login', [App\Http\Controllers\UsuarioController::class, 'autenticarUsuario'])->name('autenticar-usuario');
-    Route::post('/finalizar-pedido', [DeliveryController::class, 'finalizarPedido'])->name('finalizar.pedido');
 
-    Route::get('/inicio', [App\Http\Controllers\DeliveryController::class, 'inicioDelivery'])->name('inicio-delivery');
+    Route::middleware(['auth'])->group(function(){
+        Route::post('/finalizar-pedido', [DeliveryController::class, 'finalizarPedido'])->name('finalizar-pedido');
+        Route::get('/adicionar-endereco', [App\Http\Controllers\EnderecoController::class, 'adicionarEndereco'])->name('adicionar-endereco');
+        Route::post('/adicionar-endereco', [App\Http\Controllers\EnderecoController::class, 'registroEndereco'])->name('registro-endereco');
+        Route::get('/inicio', [App\Http\Controllers\DeliveryController::class, 'inicioDelivery'])->name('inicio-delivery');
+        Route::get('/lista-endereco', [App\Http\Controllers\EnderecoController::class, 'listarEnderecos'])->name('lista-enderecos');
+        Route::get('/editar-endereco/{id}', [App\Http\Controllers\EnderecoController::class, 'editarEndereco'])->name('editar-endereco');
+        Route::put('/editar-endereco', [App\Http\Controllers\EnderecoController::class, 'atualizarEndereco'])->name('atualizar-endereco');
+        Route::delete('/editar-endereco/{id}', [App\Http\Controllers\EnderecoController::class, 'deletarEndereco'])->name('deletar-endereco');
+    });
 });
 
 
@@ -62,7 +70,6 @@ Route::prefix('/adm')->group(function () {
         Route::delete('/gerenciar-usuarios/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'deletarUsuario'])->name('deletar-usuario');
         Route::get('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'editarUsuario'])->name('editar-usuario');
         Route::put('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'atualizarUsuario'])->name('atualizar-usuario');
-
     });
 });
 
