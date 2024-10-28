@@ -50,7 +50,10 @@
                 <h3>Reserva de Mesas</h3>
                 <a href="#">Mesas</a>
             </div>
-            <!-- Caso necessário é só adicionar mais coisas -->
+            <div class="menu-item">
+                <h3>Visualizar relatórios</h3>
+                <a href="#">Relatórios</a>
+            </div>
         </div>
     </div>
 
