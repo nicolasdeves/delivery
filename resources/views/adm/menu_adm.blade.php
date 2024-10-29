@@ -51,8 +51,12 @@
                 <a href="#">Mesas</a>
             </div>
             <div class="menu-item">
-                <h3>Visualizar relatórios</h3>
-                <a href="#">Relatórios</a>
+                <h3>Relatório de pedidos</h3>
+                <a href="{{route('relatorio-pedidos')}}">Pedidos</a>
+            </div>
+            <div class="menu-item">
+                <h3>Relatório de reservas</h3>
+                <a href="{{route('relatorio-reservas')}}">Reservas</a>
             </div>
         </div>
     </div>
@@ -63,5 +67,4 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
-
 </html>
