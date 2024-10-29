@@ -62,14 +62,25 @@ Route::prefix('/adm')->group(function () {
 
     Route::middleware(['checkLoginAdm'])->group(function () {
         Route::get('/menuAdm', [App\Http\Controllers\GerenciaController::class, 'menuAdm'])->name('menuAdm');
+
+        //Cardápio
         Route::get('/adicionar-cardapio', [App\Http\Controllers\GerenciaController::class, 'addCardapio'])->name('adicionar-cardapio');
         Route::get('/lista-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('lista-cardapio');
         Route::get('/editar-excluir-cardapio', [App\Http\Controllers\GerenciaController::class, 'listaCardapio'])->name('editar-excluir-cardapio');
         Route::get('/editar-cardapio/{id}', [App\Http\Controllers\GerenciaController::class, 'editaCardapio'])->name('editar-excluir-cardapio');
+
+        //Usuários
         Route::get('/gerenciar-usuarios', [App\Http\Controllers\GerenciarUsuariosController::class, 'listarUsuarios'])->name('gerenciar-usuarios');
         Route::delete('/gerenciar-usuarios/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'deletarUsuario'])->name('deletar-usuario');
         Route::get('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'editarUsuario'])->name('editar-usuario');
         Route::put('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'atualizarUsuario'])->name('atualizar-usuario');
+
+        //Relatórios
+        Route::get('/relatorio-pedidos', [App\Http\Controllers\RelatorioController::class, 'relatorioPedidos'])->name('relatorio-pedidos');
+        Route::get('/resultado-relatorio-pedidos', [App\Http\Controllers\RelatorioController::class, 'gerarRelatorioPedidos'])->name('gerar-relatorio-pedidos');
+        Route::get('/relatorio-reservas', [App\Http\Controllers\RelatorioController::class, 'relatorioReservas'])->name('relatorio-reservas');
+        Route::get('/resultado-relatorio-reservas', [App\Http\Controllers\RelatorioController::class, 'gerarRelatorioReservas'])->name('gerar-relatorio-reservas');
+
     });
 });
 
