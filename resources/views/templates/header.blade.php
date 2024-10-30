@@ -14,10 +14,10 @@
     </div>
     <nav>
         <ul>
-            <li><a href="{{ route('inicio') }}">Início</a></li>
-            <li><a href="{{ route('cardapio') }}">Cardápio</a></li>
-            <li><a href="{{ route('inicio-delivery')}}">Delivery</a></li>
-            <li><a href="{{ route('sobre_nos') }}"><u class="sublinhado">Sobre nós</u></a></li>
+            <li><a href="{{ route('inicio') }} " class="{{ Route::currentRouteName() == 'inicio' ? 'sublinhado' : '' }}">Início</a></li>
+            <li><a href="{{ route('cardapio') }}" class="{{ Route::currentRouteName() == 'cardapio' ? 'sublinhado' : '' }}">Cardápio</a></li>
+            <li><a href="{{ route('inicio-delivery')}}" class="{{ Route::currentRouteName() == 'inicio-delivery' ? 'sublinhado' : '' }}">Delivery</a></li>
+            <li><a href="{{ route('sobre_nos') }}" class="{{ Route::currentRouteName() == 'sobre_nos' ? 'sublinhado' : '' }}">Sobre nós</a></li>
         </ul>
     </nav>
 </header>
