@@ -56,7 +56,15 @@ class CardapioController extends Controller
 
     public function cardapio()
     {
-        return view('site.cardapio');
+        $produtos = Produto::all();
+
+        $burgs = Produto::where('tipo_produto_id', 1)->get();
+        $burgsComBatata = Produto::where('tipo_produto_id', 2)->get();
+        $entradas = Produto::where('tipo_produto_id', 3)->get();
+        $rangos = Produto::where('tipo_produto_id', 4)->get();
+        $drinks = Produto::where('tipo_produto_id', 5)->get();
+
+        return view('site.cardapio', compact('produtos', 'burgs', 'burgsComBatata', 'entradas', 'rangos', 'drinks'));
     }
 
     public function cardapio_burg()
