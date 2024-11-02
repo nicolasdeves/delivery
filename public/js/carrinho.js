@@ -71,10 +71,14 @@ function finalizarPedido() {
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message);
+        carrinho= [];
+        cartItems.innerHTML = '';
+        cartTotal.innerText = 'R$0.00';
+        alert('Pedido finalizado com sucesso!');
     })
     .catch(error => {
         console.error('Erro:', error);
+        alert('Erro ao finalizar o pedido!');
     });
 }
 

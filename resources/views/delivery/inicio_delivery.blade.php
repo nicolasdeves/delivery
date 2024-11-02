@@ -75,7 +75,7 @@
                             <p class="preco_produto" style="display:inline;">
                                 {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
                             <button class="botao-add-carrinho"
-                                onclick="adicionarAoCarrinho('{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
+                                onclick="adicionarAoCarrinho('{{ $item->id }}', '{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
                         </div>
                     </div>
                 @endforeach
@@ -97,7 +97,7 @@
                             <p class="preco_produto" style="display:inline;">
                                 {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
                             <button class="botao-add-carrinho"
-                                onclick="adicionarAoCarrinho('{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
+                                onclick="adicionarAoCarrinho('{{ $item->id }}', '{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
                         </div>
                     </div>
                 @endforeach
@@ -118,7 +118,7 @@
                             <p class="preco_produto" style="display:inline;">
                                 {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
                             <button class="botao-add-carrinho"
-                                onclick="adicionarAoCarrinho('{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
+                                onclick="adicionarAoCarrinho('{{ $item->id }}', '{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
                         </div>
                     </div>
                 @endforeach
@@ -140,7 +140,7 @@
                             <p class="preco_produto" style="display:inline;">
                                 {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
                             <button class="botao-add-carrinho"
-                                onclick="adicionarAoCarrinho('{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
+                                onclick="adicionarAoCarrinho('{{ $item->id }}', '{{ $item->nome }}', '{{ $item->preco }}', '{{ asset('storage/' . $item->imagem) }}')">Adicionar</button>
                         </div>
                     </div>
                 @endforeach
