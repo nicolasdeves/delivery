@@ -58,6 +58,10 @@
                 <h3>Relatório de reservas</h3>
                 <a href="{{route('relatorio-reservas')}}">Reservas</a>
             </div>
+            <div class="menu-item">
+                <h3>Cozinha</h3>
+                <a href="{{route('pedidos-cozinha')}}">Cozinha</a>
+            </div>
         </div>
     </div>
 
