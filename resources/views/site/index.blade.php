@@ -39,7 +39,7 @@
                     <div class="card-content">
                         <h3>Cardápio</h3>
                         <p>Conheça as variedades que temos para você.</p>
-                        <a href="/cardapio/burger" class="learn-more">Ver Cardápio <i
+                        <a href="{{ route('cardapio') }}" class="learn-more">Ver Cardápio <i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
