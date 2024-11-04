@@ -13,7 +13,8 @@ class UsuarioController extends Controller
         return view('delivery/registro_usuario');
     }
 
-    public function registrar(Request $request){
+    public function registrar(Request $request)
+    {
 
         $request->validate([
             'nome' => 'required|string|max:255',
@@ -28,7 +29,7 @@ class UsuarioController extends Controller
             'telefone' => $request->input('telefone'),
             'cpf' => $request->input('cpf')
         ]);
-        
+
         return redirect()->route('delivery/login');
     }
 
@@ -39,15 +40,18 @@ class UsuarioController extends Controller
 
     public function autenticarUsuario(Request $request)
     {
-        if($request->cpf){
-            $usuario= Usuario::where('cpf', $request->cpf)->first();
-            if($usuario){
+
+        \Log::info($request);
+        if ($request->cpf) {
+            $usuario = Usuario::where('cpf', $request->cpf)->first();
+            if ($usuario) {
                 Auth::login($usuario);
                 return redirect()->route('inicio-delivery');
             }
         }
-/*         $erro = 'Usuário ou senha inválidos';
- */        return view('delivery/login_user');
+        /*         $erro = 'Usuário ou senha inválidos';
+ */
+        return view('delivery/login_user');
     }
     public function logout()
     {
