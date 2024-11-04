@@ -81,6 +81,8 @@ Route::prefix('/adm')->group(function () {
         Route::get('/relatorio-reservas', [App\Http\Controllers\RelatorioController::class, 'relatorioReservas'])->name('relatorio-reservas');
         Route::get('/resultado-relatorio-reservas', [App\Http\Controllers\RelatorioController::class, 'gerarRelatorioReservas'])->name('gerar-relatorio-reservas');
 
+        //Cozinha
+        Route::get('/pedidos-cozinha', [App\Http\Controllers\PedidoCozinhaController::class, 'pedidoCozinha'])->name('pedidos-cozinha');
     });
 });
 
