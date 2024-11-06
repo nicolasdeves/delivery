@@ -51,6 +51,7 @@ Route::prefix('/delivery')->group(function () {
         Route::get('/editar-endereco/{id}', [App\Http\Controllers\EnderecoController::class, 'editarEndereco'])->name('editar-endereco');
         Route::put('/editar-endereco', [App\Http\Controllers\EnderecoController::class, 'atualizarEndereco'])->name('atualizar-endereco');
         Route::delete('/editar-endereco/{id}', [App\Http\Controllers\EnderecoController::class, 'deletarEndereco'])->name('deletar-endereco');
+        Route::get('/modal-confirmacao', [App\Http\Controllers\DeliveryController::class, 'visualizarModal'])->name('modal-confirmacao');
     });
 });
 

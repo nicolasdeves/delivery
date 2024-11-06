@@ -14,6 +14,8 @@ class Endereco extends Model
     'numero',
     'bairro',
     'cep',
-    'usuario_id'
+    'usuario_id',
+    'complemento',
+    'nome'
     ];
 }

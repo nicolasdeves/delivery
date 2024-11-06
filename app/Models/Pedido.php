@@ -25,6 +25,8 @@ class Pedido extends Model
         'taxa_entrega_id',
         'pagamento_id',
         'usuario_id',
+        'endereco_id',
+        'observacao'
     ];
 
     public function usuario()

@@ -173,13 +173,41 @@
 
         <div class="cart-footer">
             <p>Total: <span id="cartTotal">R$0,00</span></p>
-            <button class="btn btn-primary finalizar-compra-btn" onclick="finalizarPedido()">Finalizar Pedido</button>
+            <button type="button" class="btn btn-primary finalizar-compra-btn" data-bs-toggle="modal"
+                data-bs-target="#modalConfirmacao">
+                Finalizar Pedido
+            </button>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+    @include('delivery.modal_confirmacao', compact('usuario', 'enderecos'))
+
+
+
+
+
+
+
 
     @include('templates.footer')
 
     <script src="{{ asset('js/carrinho.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
