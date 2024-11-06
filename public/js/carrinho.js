@@ -18,6 +18,8 @@ function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto
 function atualizarCarrinho() {
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
+    let totalPedido = document.getElementById('totalPedido');
+    const totalEntrega = document.getElementById('totalEntrega');
     cartItems.innerHTML = '';
 
     let total = 0;
@@ -41,6 +43,10 @@ function atualizarCarrinho() {
     });
 
     cartTotal.innerText = `R$${total.toFixed(2)}`;
+    totalPedido = `R$${total.toFixed(2)}`;
+
+    console.log("totalPedido");
+    console.log(totalPedido);
 }
 
 function removerDoCarrinho(nomeProduto) {
@@ -58,8 +64,11 @@ function calcularTotal() {
     document.getElementById("cartTotal").textContent = "R$" + total.toFixed(2);
 }
 
-function finalizarPedido() {
+function finalizarPedido(endereco_selecionado, observacao) {
     const carrinhoData = carrinho;
+
+    console.log("observacao")
+    console.log(observacao)
 
     fetch('/delivery/finalizar-pedido', {
         method: 'POST',
@@ -67,7 +76,11 @@ function finalizarPedido() {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
-        body: JSON.stringify({ carrinho: carrinhoData })
+        body: JSON.stringify({
+            carrinho: carrinhoData,
+            endereco: endereco_selecionado,
+            observacao
+        })
     })
     .then(response => response.json())
     .then(data => {
@@ -75,6 +88,7 @@ function finalizarPedido() {
         cartItems.innerHTML = '';
         cartTotal.innerText = 'R$0.00';
         alert('Pedido finalizado com sucesso!');
+        location.reload();
     })
     .catch(error => {
         console.error('Erro:', error);
