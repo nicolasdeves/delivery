@@ -8,7 +8,7 @@
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <label for="usuario" class="form-label">Rua:</label>
+                        <label for="usuario" class="form-label">Nome:</label>
                         <input type="text" class="form-control" id="usuario" value={{ $usuario->nome }} readonly>
                     </div>
 
