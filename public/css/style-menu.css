@@ -87,17 +87,22 @@ header {
 }
 .menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 40px;
+    margin-left: 60px;
 }
 .menu-item {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    width: 300px;
+    display: grid;
+    margin: 10px;
+
 }
 .menu-item:hover {  
     transform: scale(1.05);

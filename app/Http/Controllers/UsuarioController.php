@@ -30,7 +30,7 @@ class UsuarioController extends Controller
             'cpf' => $request->input('cpf')
         ]);
 
-        return redirect()->route('delivery/login');
+        return redirect()->route('login_user');
     }
 
     public function login()
@@ -40,8 +40,6 @@ class UsuarioController extends Controller
 
     public function autenticarUsuario(Request $request)
     {
-
-        \Log::info($request);
         if ($request->cpf) {
             $usuario = Usuario::where('cpf', $request->cpf)->first();
             if ($usuario) {

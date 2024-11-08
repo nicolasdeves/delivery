@@ -56,6 +56,9 @@ Route::prefix('/delivery')->group(function () {
         Route::get('/editar-reserva{id}', [App\Http\Controllers\ReservaMesaController::class, 'editarReserva'])->name('editar-reserva');
         Route::put('/editar-reserva', [App\Http\Controllers\ReservaMesaController::class, 'atualizarReserva'])->name('atualizar-reserva');
         Route::delete('/cancelar-reserva{id}', [App\Http\Controllers\ReservaMesaController::class, 'cancelarReserva'])->name('cancelar-reserva');
+
+        Route::delete('/editar-endereco/{id}', [App\Http\Controllers\EnderecoController::class, 'deletarEndereco'])->name('deletar-endereco');
+        Route::get('/modal-confirmacao', [App\Http\Controllers\DeliveryController::class, 'visualizarModal'])->name('modal-confirmacao');
     });
 });
 

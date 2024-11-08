@@ -11,10 +11,14 @@ class Usuario extends Authenticatable
 {
     protected $table = 'usuario';
     protected $fillable = [
-    'nome', 
-    'email', 
-    'telefone', 
+    'nome',
+    'email',
+    'telefone',
     'cpf'
     ];
     use HasFactory;
+    public function enderecos()
+    {
+        return $this->hasMany(Endereco::class);
+    }
 }
