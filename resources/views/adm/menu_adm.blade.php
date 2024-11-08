@@ -39,10 +39,6 @@
                 <a href="lista-cardapio">Listar</a>
             </div>
             <div class="menu-item">
-                <h3>Gerenciar Pedidos</h3>
-                <a href="#">Pedidos</a>
-            </div>
-            <div class="menu-item">
                 <h3>Gerenciar Usuários</h3>
                 <a href="gerenciar-usuarios">Usuários</a>
             </div>

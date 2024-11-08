@@ -17,5 +17,4 @@ class Usuario extends Authenticatable
     'cpf'
     ];
     use HasFactory;
-    
 }
