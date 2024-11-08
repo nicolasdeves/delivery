@@ -25,7 +25,7 @@
     @include('templates.header')
 
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar fixed-left">
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
                 <div class="botoes lora-font">
@@ -44,16 +44,17 @@
             <h1 id="burgs" class="lora-font" style="font-weight:bold;">Burgs</h1>
             <div class="posts lora-font">
                 @foreach ($burgs as $item)
-                    <div class="row">
-                        <div class="post ">
-                            <img src="{{ asset('storage/' . $item->imagem) }}"
-                                alt="{{ asset('storage/' . $item->imagem) }}">
-                            <h3>{{ $item->nome }}</h3>
-                            <p>{{ $item->descricao }}</p>
-                            <p class="preco_produto" style="display:inline;">
-                                {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
-                        </div>
+                <div class="row">
+                    <div class="post ">
+                        <img src="{{ asset('storage/' . $item->imagem) }}"
+                            alt="{{ asset('storage/' . $item->imagem) }}">
+                        <h3>{{ $item->nome }}</h3>
+                        <p>{{ $item->descricao }}</p>
+                        <p class="preco_produto" style="display:inline;">
+                            {{ 'R$' . number_format($item->preco, 2, ',', '.') }}
+                        </p>
                     </div>
+                </div>
                 @endforeach
             </div>
             <hr>
@@ -64,16 +65,17 @@
             <h1 id="burgsBatata" class="lora-font" style="font-weight:bold;">Burgs com Batata</h1>
             <div class="posts lora-font">
                 @foreach ($burgsComBatata as $item)
-                    <div class="row">
-                        <div class="post ">
-                            <img src="{{ asset('storage/' . $item->imagem) }}"
-                                alt="{{ asset('storage/' . $item->imagem) }}">
-                            <h3>{{ $item->nome }}</h3>
-                            <p>{{ $item->descricao }}</p>
-                            <p class="preco_produto" style="display:inline;">
-                                {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
-                        </div>
+                <div class="row">
+                    <div class="post ">
+                        <img src="{{ asset('storage/' . $item->imagem) }}"
+                            alt="{{ asset('storage/' . $item->imagem) }}">
+                        <h3>{{ $item->nome }}</h3>
+                        <p>{{ $item->descricao }}</p>
+                        <p class="preco_produto" style="display:inline;">
+                            {{ 'R$' . number_format($item->preco, 2, ',', '.') }}
+                        </p>
                     </div>
+                </div>
                 @endforeach
             </div>
             <hr>
@@ -84,16 +86,17 @@
             <h1 id="entradas" class="lora-font" style="font-weight:bold;">Entradas</h1>
             <div class="posts lora-font">
                 @foreach ($entradas as $item)
-                    <div class="row">
-                        <div class="post ">
-                            <img src="{{ asset('storage/' . $item->imagem) }}"
-                                alt="{{ asset('storage/' . $item->imagem) }}">
-                            <h3>{{ $item->nome }}</h3>
-                            <p>{{ $item->descricao }}</p>
-                            <p class="preco_produto" style="display:inline;">
-                                {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
-                        </div>
+                <div class="row">
+                    <div class="post ">
+                        <img src="{{ asset('storage/' . $item->imagem) }}"
+                            alt="{{ asset('storage/' . $item->imagem) }}">
+                        <h3>{{ $item->nome }}</h3>
+                        <p>{{ $item->descricao }}</p>
+                        <p class="preco_produto" style="display:inline;">
+                            {{ 'R$' . number_format($item->preco, 2, ',', '.') }}
+                        </p>
                     </div>
+                </div>
                 @endforeach
             </div>
             <hr>
@@ -103,16 +106,17 @@
             <h1 id="rangos" class="lora-font" style="font-weight:bold;">Rangos</h1>
             <div class="posts lora-font">
                 @foreach ($rangos as $item)
-                    <div class="row">
-                        <div class="post ">
-                            <img src="{{ asset('storage/' . $item->imagem) }}"
-                                alt="{{ asset('storage/' . $item->imagem) }}">
-                            <h3>{{ $item->nome }}</h3>
-                            <p>{{ $item->descricao }}</p>
-                            <p class="preco_produto" style="display:inline;">
-                                {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
-                        </div>
+                <div class="row">
+                    <div class="post ">
+                        <img src="{{ asset('storage/' . $item->imagem) }}"
+                            alt="{{ asset('storage/' . $item->imagem) }}">
+                        <h3>{{ $item->nome }}</h3>
+                        <p>{{ $item->descricao }}</p>
+                        <p class="preco_produto" style="display:inline;">
+                            {{ 'R$' . number_format($item->preco, 2, ',', '.') }}
+                        </p>
                     </div>
+                </div>
                 @endforeach
             </div>
             <hr>
@@ -123,16 +127,17 @@
             <h1 id="drinks" class="lora-font" style="font-weight:bold;">Drinks</h1>
             <div class="posts lora-font">
                 @foreach ($drinks as $item)
-                    <div class="row">
-                        <div class="post ">
-                            <img src="{{ asset('storage/' . $item->imagem) }}"
-                                alt="{{ asset('storage/' . $item->imagem) }}">
-                            <h3>{{ $item->nome }}</h3>
-                            <p>{{ $item->descricao }}</p>
-                            <p class="preco_produto" style="display:inline;">
-                                {{ 'R$' . number_format($item->preco, 2, ',', '.') }}</p>
-                        </div>
+                <div class="row">
+                    <div class="post ">
+                        <img src="{{ asset('storage/' . $item->imagem) }}"
+                            alt="{{ asset('storage/' . $item->imagem) }}">
+                        <h3>{{ $item->nome }}</h3>
+                        <p>{{ $item->descricao }}</p>
+                        <p class="preco_produto" style="display:inline;">
+                            {{ 'R$' . number_format($item->preco, 2, ',', '.') }}
+                        </p>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
