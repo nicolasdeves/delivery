@@ -64,7 +64,7 @@
                     <div class="card-content">
                         <h3>Sobre nós</h3>
                         <p>Conheça um pouco mais sobre nossa história.</p>
-                        <a href="#" class="learn-more">Sobre nós <i class="fas fa-arrow-right"></i></a>
+                        <a href="{{ route('sobre_nos') }}" class="learn-more">Sobre nós <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
