@@ -13,7 +13,14 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="enderecoSelect" class="form-label">Selecione seu endereço:</label>
+                        <label for="enderecoSelect" class="form-label d-flex align-items-center">
+                            Selecione seu endereço:
+                            <button type="button" class="btn btn-primary novo-endereco-btn ms-2"
+                                onclick="cadastrarNovoEndereco()">
+                                Novo Endereço
+                            </button>
+                        </label>
+
                         <select id="enderecoSelect" class="form-control" onchange="preencherEndereco()">
                             <option value="">Selecione um endereço</option>
                             @foreach ($enderecos as $endereco)
@@ -106,6 +113,20 @@
 
             finalizarPedido(endereco, observacao)
         }
+
+        function cadastrarNovoEndereco() {
+            fetch('/delivery/adicionar-endereco', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        'nome': 'Novo Endereço',
+                    })
+            })
+        }
+
     </script>
 
     <script src="{{ asset('js/carrinho.js') }}"></script>

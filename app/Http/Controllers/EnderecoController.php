@@ -11,26 +11,27 @@ class EnderecoController extends Controller
     {
         return view('delivery/adicionar_endereco');
     }
-    
+
     public function registroEndereco(Request $request){
 
         $userId = auth()->id();
 
-        $request->validate([
-            'rua' => 'required|string|max:255',
-            'numero' => 'required|integer',  
-            'bairro' => 'required|string|max:100',
-            'cep' => 'required|digits:8', 
-        ]);
+        // $request->validate([
+        //     'rua' => 'required|string|max:255',
+        //     'numero' => 'required|integer',
+        //     'bairro' => 'required|string|max:100',
+        //     'cep' => 'required|digits:8',
+        // ]);
 
         Endereco::create([
-            'rua' => $request->input('rua'),
-            'numero' => $request->input('numero'),
-            'bairro' => $request->input('bairro'),
-            'cep' => $request->input('cep'),
+            'nome' => $request->input('nome'),
+            'rua' => $request->input('rua') ?? '',
+            'numero' => $request->input('numero') ?? '',
+            'bairro' => $request->input('bairro') ?? '',
+            'cep' => $request->input('cep') ?? '',
             'usuario_id' => $userId
         ]);
-        
+
         return redirect()->route('inicio-delivery');
     }
 
