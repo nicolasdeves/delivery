@@ -17,11 +17,8 @@ class Usuario extends Authenticatable
     'cpf'
     ];
     use HasFactory;
-
-
     public function enderecos()
     {
         return $this->hasMany(Endereco::class);
     }
-
 }

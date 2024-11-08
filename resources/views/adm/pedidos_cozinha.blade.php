@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos abertos</title>
+    <title>Pedidos</title>
     <link rel="icon" href="../images/laporto-icon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,41 +27,86 @@
     <h1>Pedidos</h1>
     
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6"> 
             <h2>Pedidos Abertos</h2>
             <div class="border p-3">
-                @foreach($pedidosAbertos as $pedido)
-                    <div class="pedido p-2 mb-2 border rounded">
-                        <p>ID: {{ $pedido->id }}</p>
-                        @foreach($pedido as $item)
-                            <p>{{ $item->pedidoProduto->produto->nome }}</p>
-                            <br>
-                            <p>{{ $item->pedidoProduto->produto->descricao }}</p>
-                        @endforeach    
+                <div class="row">
+                    @foreach($pedidosAbertos as $pedido)
+                    <div class="col-12 mb-2"> 
+                        <form action="{{ route('atualizar-status-pedido', $pedido->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="pedido p-2 border rounded">
+                                <p>ID: {{ $pedido->id }}</p>
+                                @foreach($pedido->pedidoProduto as $item)
+                                    <p>Nome do Produto: {{ $item->produto->nome }}</p>
+                                    <p>Descrição: {{ $item->produto->descricao }}</p>
+                                @endforeach    
+                                <button type="submit" class="btn btn-primary mt-2">Iniciar preparação</button>
+                            </div>
+                        </form>
                     </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6"> 
             <h2>Em Preparação</h2>
             <div class="border p-3">
-                @foreach($pedidosEmProducao as $pedido)
+                <div class="row">
+                    @foreach($pedidosEmProducao as $pedido)
+                    <div class="col-12 mb-2"> 
+                        <form action="{{ route('atualizar-status-pedido', $pedido->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="pedido p-2 border rounded">
+                                <p>ID: {{ $pedido->id }}</p>
+                                @foreach($pedido->pedidoProduto as $item)
+                                    <p>Nome do Produto: {{ $item->produto->nome }}</p>
+                                    <p>Descrição: {{ $item->produto->descricao }}</p>
+                                @endforeach 
+                                <button type="submit" class="btn btn-primary mt-2">Enviar para entrega</button>
+                            </div>
+                        </form>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Em Entrega</h2>
+            <div class="border p-3">
+                @foreach($pedidosEmEntrega as $pedido)
+                <form action="{{ route('atualizar-status-pedido', $pedido->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div class="pedido p-2 mb-2 border rounded">
                         <p>ID: {{ $pedido->id }}</p>
-                        <p>Detalhes: {{ $pedido->detalhes }}</p>
+                        @foreach($pedido->pedidoProduto as $item)
+                            <p>Nome do Produto: {{ $item->produto->nome }}</p>
+                            <p>Descrição: {{ $item->produto->descricao }}</p>
+                        @endforeach 
+                        <button type="submit" class="btn btn-primary mt-2">Finalizar pedido</button>
                     </div>
+                </form>
                 @endforeach
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <h2>Finalizados</h2>
             <div class="border p-3">
                 @foreach($pedidosFinalizados as $pedido)
                     <div class="pedido p-2 mb-2 border rounded">
                         <p>ID: {{ $pedido->id }}</p>
-                        <p>Detalhes: {{ $pedido->detalhes }}</p>
+                        @foreach($pedido->pedidoProduto as $item)
+                            <p>Nome do Produto: {{ $item->produto->nome }}</p>
+                            <p>Descrição: {{ $item->produto->descricao }}</p>
+                        @endforeach 
                     </div>
                 @endforeach
             </div>
@@ -69,9 +114,12 @@
     </div>
 </div>
 
+
+
+
 @include('templates.footer')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
 

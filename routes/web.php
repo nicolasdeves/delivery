@@ -34,7 +34,6 @@ Route::get('/cardapio', [App\Http\Controllers\CardapioController::class, 'cardap
 
 Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
 
-
 //Rotas delivery
 Route::prefix('/delivery')->group(function () {
     Route::get('/registro-usuario', [App\Http\Controllers\UsuarioController::class, 'registroUsuario'])->name('registro-usuario');
@@ -48,8 +47,16 @@ Route::prefix('/delivery')->group(function () {
         Route::post('/adicionar-endereco', [App\Http\Controllers\EnderecoController::class, 'registroEndereco'])->name('registro-endereco');
         Route::get('/inicio', [App\Http\Controllers\DeliveryController::class, 'inicioDelivery'])->name('inicio-delivery');
         Route::get('/lista-endereco', [App\Http\Controllers\EnderecoController::class, 'listarEnderecos'])->name('lista-enderecos');
-        Route::get('/editar-endereco/{id}', [App\Http\Controllers\EnderecoController::class, 'editarEndereco'])->name('editar-endereco');
+        Route::get('/editar-endereco{id}', [App\Http\Controllers\EnderecoController::class, 'editarEndereco'])->name('editar-endereco');
         Route::put('/editar-endereco', [App\Http\Controllers\EnderecoController::class, 'atualizarEndereco'])->name('atualizar-endereco');
+        Route::delete('/editar-endereco{id}', [App\Http\Controllers\EnderecoController::class, 'deletarEndereco'])->name('deletar-endereco');
+        Route::get('/reserva-mesa', [App\Http\Controllers\ReservaMesaController::class, 'reservaMesa'])->name('reserva-mesa');
+        Route::post('/reserva-mesa', [App\Http\Controllers\ReservaMesaController::class, 'registrarReservaMesa'])->name('registrar-reserva-mesa');
+        Route::get('/lista-reservas-mesa', [App\Http\Controllers\ReservaMesaController::class, 'listarReservasMesa'])->name('lista-reservas-mesa');
+        Route::get('/editar-reserva{id}', [App\Http\Controllers\ReservaMesaController::class, 'editarReserva'])->name('editar-reserva');
+        Route::put('/editar-reserva', [App\Http\Controllers\ReservaMesaController::class, 'atualizarReserva'])->name('atualizar-reserva');
+        Route::delete('/cancelar-reserva{id}', [App\Http\Controllers\ReservaMesaController::class, 'cancelarReserva'])->name('cancelar-reserva');
+
         Route::delete('/editar-endereco/{id}', [App\Http\Controllers\EnderecoController::class, 'deletarEndereco'])->name('deletar-endereco');
         Route::get('/modal-confirmacao', [App\Http\Controllers\DeliveryController::class, 'visualizarModal'])->name('modal-confirmacao');
     });
@@ -84,6 +91,7 @@ Route::prefix('/adm')->group(function () {
 
         //Cozinha
         Route::get('/pedidos-cozinha', [App\Http\Controllers\PedidoCozinhaController::class, 'pedidoCozinha'])->name('pedidos-cozinha');
+        Route::put('/pedidos-cozinha/{id}', [App\Http\Controllers\PedidoCozinhaController::class, 'atualizarStatusPedido'])->name('atualizar-status-pedido');
     });
 });
 

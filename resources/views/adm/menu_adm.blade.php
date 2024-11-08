@@ -54,6 +54,29 @@
                     <a href="#">Mesas</a>
                 </div>
             </div>
+            <div class="menu-item">
+                <h3>Listar Itens do Cardápio</h3>
+                <a href="lista-cardapio">Listar</a>
+            </div>
+            <div class="menu-item">
+                <h3>Gerenciar Usuários</h3>
+                <a href="gerenciar-usuarios">Usuários</a>
+            </div>
+            <div class="menu-item">
+                <h3>Reserva de Mesas</h3>
+                <a href="#">Mesas</a>
+            </div>
+            <div class="menu-item">
+                <h3>Relatório de pedidos</h3>
+                <a href="{{route('relatorio-pedidos')}}">Pedidos</a>
+            </div>
+            <div class="menu-item">
+                <h3>Relatório de reservas</h3>
+                <a href="{{route('relatorio-reservas')}}">Reservas</a>
+            </div>
+            <div class="menu-item">
+                <h3>Cozinha</h3>
+                <a href="{{route('pedidos-cozinha')}}">Cozinha</a>
             <div class="row">
                 <div class="menu-item">
                     <h3>Relatório de pedidos</h3>
@@ -62,10 +85,6 @@
                 <div class="menu-item">
                     <h3>Relatório de reservas</h3>
                     <a href="{{route('relatorio-reservas')}}">Reservas</a>
-                </div>
-                <div class="menu-item">
-                    <h3>Cozinha</h3>
-                    <a href="{{route('pedidos-cozinha')}}">Cozinha</a>
                 </div>
             </div>
         </div>
