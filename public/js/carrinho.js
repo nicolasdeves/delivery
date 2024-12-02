@@ -45,8 +45,6 @@ function atualizarCarrinho() {
     cartTotal.innerText = `R$${total.toFixed(2)}`;
     totalPedido = `R$${total.toFixed(2)}`;
 
-    console.log("totalPedido");
-    console.log(totalPedido);
 }
 
 function removerDoCarrinho(nomeProduto) {
@@ -67,11 +65,14 @@ function calcularTotal() {
 function finalizarPedido(endereco_selecionado, observacao) {
     const carrinhoData = carrinho;
 
+<<<<<<< HEAD
     console.log(carrinhoData)
 
     console.log("observacao")
     console.log(observacao)
 
+=======
+>>>>>>> e96acb4d6de63a7240b5fc4c12fd103dbf9981e2
     fetch('/delivery/finalizar-pedido', {
         method: 'POST',
         headers: {
