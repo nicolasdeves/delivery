@@ -27,6 +27,9 @@ class DeliveryController extends Controller
         $usuario = Auth::user();
         $enderecos = $usuario->enderecos;
 
+        \Log::info("Usuário: " . $usuario);
+        \Log::info("Endereços: " . $enderecos);
+
         return view('delivery/inicio_delivery', compact('produtos', 'burgs', 'burgsComBatata', 'entradas', 'rangos', 'drinks', 'usuario', 'enderecos'));
     }
 
@@ -35,7 +38,7 @@ class DeliveryController extends Controller
         $valorTotal = 0;
         $usuario = Auth::user();
 
-        $endereco = $this->atualizarEndereco($request->endereco, $usuario->id);
+        $this->atualizarEndereco($request->endereco);
 
         foreach ($request->carrinho as $item) {
             $idProduto = $item['id'];
@@ -52,11 +55,6 @@ class DeliveryController extends Controller
             'taxa_entrega_id' => 1,
             'pagamento_id' => 1,
             'usuario_id' => $usuario->id,
-<<<<<<< HEAD
-=======
-            'endereco_id' => $endereco->id,
-            'observacao' => $request['observacao']
->>>>>>> e96acb4d6de63a7240b5fc4c12fd103dbf9981e2
 
         ]);
 
@@ -76,6 +74,9 @@ class DeliveryController extends Controller
         /* try {
             $sid = config('services.twilio.sid');
             $token = config('services.twilio.token');
+
+            \Log::info("SID: " . $sid);
+            \Log::info("TOKEN: " . $token);
 
             $client = new Client($sid, $token);
 
@@ -116,39 +117,13 @@ class DeliveryController extends Controller
         return view('delivery/modal_confirmacao');
     }
 
-    public function atualizarEndereco($enderecoRequest, $usuarioId)
+    public function atualizarEndereco($endereco)
     {
-<<<<<<< HEAD
         Endereco::where('id', $endereco['id'])->update([
             'rua' => $endereco['rua'],
             'numero' => $endereco['numero'],
             'bairro' => $endereco['bairro'],
             'cep' => $endereco['cep'],
-=======
-
-        $endereco = Endereco::where('id', $enderecoRequest['endereco_id'])->update([
-            'rua' => $enderecoRequest['rua'],
-            'numero' => $enderecoRequest['numero'],
-            'bairro' => $enderecoRequest['bairro'],
-            'cep' => $enderecoRequest['cep'],
-            'complemento' => $enderecoRequest['complemento'],
-            'nome' => $enderecoRequest['rua'] . ', ' . $enderecoRequest['numero']
->>>>>>> e96acb4d6de63a7240b5fc4c12fd103dbf9981e2
         ]);
-
-        if (!$endereco) {
-            $endereco = Endereco::create([
-                'rua' => $enderecoRequest['rua'],
-                'numero' => $enderecoRequest['numero'],
-                'bairro' => $enderecoRequest['bairro'],
-                'cep' => $enderecoRequest['cep'],
-                'complemento' => $enderecoRequest['complemento'],
-                'nome' => $enderecoRequest['rua'] . ', ' . $enderecoRequest['numero'],
-                'usuario_id' => $usuarioId
-
-            ]);
-        }
-
-        return $endereco;
     }
 }
