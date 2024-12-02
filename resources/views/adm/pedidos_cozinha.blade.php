@@ -46,6 +46,9 @@
                             </div>
                         </form>
                     </div>
+                    <a href="{{ route('gerar-pdf-pedido', $pedido->id) }}" class="btn btn-secondary mt-2" target="_blank">
+                        Gerar PDF
+                    </a>                    
                     @endforeach
                 </div>
             </div>
@@ -70,6 +73,9 @@
                             </div>
                         </form>
                     </div>
+                    <a href="{{ route('gerar-pdf-pedido', $pedido->id) }}" class="btn btn-secondary mt-2" target="_blank">
+                        Gerar PDF
+                    </a>                    
                     @endforeach
                 </div>
             </div>

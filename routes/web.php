@@ -32,7 +32,9 @@ Route::get('/sobre-nos', [App\Http\Controllers\InicioController::class, 'sobre_n
 
 Route::get('/cardapio', [App\Http\Controllers\CardapioController::class, 'cardapio'])->name('cardapio');
 
-Route::fallback([App\Http\Controllers\InicioController::class, 'inicio']);
+Route::fallback(function () {
+    return redirect('/home');
+});
 
 //Rotas delivery
 Route::prefix('/delivery')->group(function () {
@@ -92,6 +94,8 @@ Route::prefix('/adm')->group(function () {
         //Cozinha
         Route::get('/pedidos-cozinha', [App\Http\Controllers\PedidoCozinhaController::class, 'pedidoCozinha'])->name('pedidos-cozinha');
         Route::put('/pedidos-cozinha/{id}', [App\Http\Controllers\PedidoCozinhaController::class, 'atualizarStatusPedido'])->name('atualizar-status-pedido');
+        Route::get('/pedidos-cozinha/{id}/pdf', [App\Http\Controllers\PedidoCozinhaController::class, 'gerarPdf'])->name('gerar-pdf-pedido');
+
     });
 });
 

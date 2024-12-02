@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use Carbon\Carbon;
 use App\Models\Reserva;
 
 class RelatorioController extends Controller
@@ -25,8 +26,14 @@ class RelatorioController extends Controller
             'data_final' => 'required|date|after_or_equal:data_inicial',
         ]);
 
+        
         $dataInicial = $request->input('data_inicial');
         $dataFinal = $request->input('data_final');
+
+
+$dataInicial = Carbon::parse($dataInicial)->startOfDay();
+$dataFinal = Carbon::parse($dataFinal)->endOfDay(); 
+
 
         $pedidos = Pedido::with('usuario')
         ->where('created_at', '>=', $dataInicial)

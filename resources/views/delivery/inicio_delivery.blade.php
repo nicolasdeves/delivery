@@ -25,11 +25,6 @@
     @include('templates.header')
 
     <div class="container">
-        <div class="reserva-btn-container text-center my-4">
-            <a href="{{ route('reserva-mesa') }}" class="btn btn-success btn-lg reserva-btn">
-                <i class="fas fa-chair"></i> Reserva de Mesas
-            </a>
-        </div>
         <div class="sidebar">
             <div class="categorias">
                 <h2 class="shadows-into-light-regular">Categorias</h2>
@@ -42,6 +37,12 @@
                     <a href="#drinks"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
                 </div>
             </div>
+            <div class="reserva-btn-container text-center my-4">
+                <a href="{{ route('reserva-mesa') }}" class="btn btn-secondary btn-lg reserva-btn">
+                    <i class="fas fa-chair"></i> Reserva de Mesas
+                </a>
+            </div>
+    
         </div>
         <div class="content">
 

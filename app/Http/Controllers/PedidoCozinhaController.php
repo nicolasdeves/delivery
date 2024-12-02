@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use PDF;
 
 class PedidoCozinhaController extends Controller
 {
@@ -34,5 +35,13 @@ class PedidoCozinhaController extends Controller
         $pedido->save();
 
         return redirect()->back()->with('success', 'Status do pedido atualizado com sucesso!');
+    }
+    public function gerarPDF($id)
+    {
+        $pedido = Pedido::with('pedidoProduto.produto')->findOrFail($id);
+
+        $pdf = PDF::loadView('adm.pdf.pdf_pedido', compact('pedido'));
+
+        return $pdf->stream("pedido_$id.pdf");
     }
 }

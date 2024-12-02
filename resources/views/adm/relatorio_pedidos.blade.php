@@ -16,12 +16,12 @@
         <form action="{{ route('gerar-relatorio-pedidos') }}" method="GET">
             <div>
                 <label for="data_inicial">Data Inicial:</label>
-                <input type="date" id="data_inicial" name="data_inicial" required>
+                <input type="datetime-local" id="data_inicial" name="data_inicial" required>
             </div>
 
             <div>
                 <label for="data_final">Data Final:</label>
-                <input type="date" id="data_final" name="data_final" required>
+                <input type="datetime-local" id="data_final" name="data_final" required>
             </div>
 
             <div>
@@ -129,6 +129,28 @@
                 infoRow.style.display = 'none';
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const now = new Date();
+
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
+        }
+
+        const startOfDay = new Date(now.setHours(0, 0, 0, 0));
+        const formattedStartOfDay = formatDate(startOfDay);
+
+        const endOfDay = new Date(new Date().setHours(23, 59, 0, 0));
+        const formattedEndOfDay = formatDate(endOfDay);
+
+        document.getElementById('data_inicial').value = formattedStartOfDay;
+        document.getElementById('data_final').value = formattedEndOfDay;
+    });
     </script>
 
 </body>

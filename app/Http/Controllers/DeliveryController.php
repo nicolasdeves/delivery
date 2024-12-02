@@ -55,8 +55,6 @@ class DeliveryController extends Controller
             'taxa_entrega_id' => 1,
             'pagamento_id' => 1,
             'usuario_id' => $usuario->id,
-            'endereco_id' => $request['endereco']['id'],
-            'observacao' => $request['observacao']
 
         ]);
 
@@ -73,7 +71,7 @@ class DeliveryController extends Controller
         }
 
         //mandar mensagem no WhatsApp pelo Twilio -> é trial, só funciona com números cadastrados, ou seja, precisamos cadastrar os números dos "clientes" do site do Twilio -> ler o qr code
-        try {
+        /* try {
             $sid = config('services.twilio.sid');
             $token = config('services.twilio.token');
 
@@ -104,7 +102,7 @@ class DeliveryController extends Controller
 
         } catch (Exception $e) {
             echo "Erro: " . $e->getMessage();
-        }
+        } */
 
         redirect()->route('inicio');
 
@@ -126,8 +124,6 @@ class DeliveryController extends Controller
             'numero' => $endereco['numero'],
             'bairro' => $endereco['bairro'],
             'cep' => $endereco['cep'],
-            'complemento' => $endereco['complemento'],
-            'nome' => $endereco['nome'],
         ]);
     }
 }
