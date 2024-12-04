@@ -18,7 +18,6 @@ class LoginAdmController extends Controller
 
     public function autenticar(Request $request)
     {
-
         $user = $request->input('usuario');
         $senha = $request->input('senha');
 

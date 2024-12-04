@@ -85,6 +85,7 @@ Route::prefix('/adm')->group(function () {
         Route::get('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'editarUsuario'])->name('editar-usuario');
         Route::put('/editar-usuario/{id}', [App\Http\Controllers\GerenciarUsuariosController::class, 'atualizarUsuario'])->name('atualizar-usuario');
 
+
         //Relatórios
         Route::get('/relatorio-pedidos', [App\Http\Controllers\RelatorioController::class, 'relatorioPedidos'])->name('relatorio-pedidos');
         Route::get('/resultado-relatorio-pedidos', [App\Http\Controllers\RelatorioController::class, 'gerarRelatorioPedidos'])->name('gerar-relatorio-pedidos');
@@ -99,6 +100,8 @@ Route::prefix('/adm')->group(function () {
     });
 });
 
+// Logout do usuário
+Route::post('/logout', [App\Http\Controllers\GerenciarUsuariosController::class, 'logout'])->name('logout');
 
 //CRUD Cardápio
 Route::prefix('/cardapio')->group(function () {

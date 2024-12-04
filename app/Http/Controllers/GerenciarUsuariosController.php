@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use Illuminate\Support\Facades\Auth;
 
 class GerenciarUsuariosController extends Controller
 {
@@ -13,8 +14,8 @@ class GerenciarUsuariosController extends Controller
     }
 
     public function deletarUsuario($id){
-        $user = Usuario::findOrFail($id); 
-    $user->delete(); 
+        $user = Usuario::findOrFail($id);
+    $user->delete();
 
     return redirect()->route('gerenciar-usuarios')->with('success', 'Usuário excluído com sucesso!');
     }
@@ -28,5 +29,14 @@ class GerenciarUsuariosController extends Controller
         $user = Usuario::findOrFail($id);
         $user->update($request->all());
         return redirect()->route('gerenciar-usuarios')->with('success', 'Usuário atualizado com sucesso!');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

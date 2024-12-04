@@ -20,7 +20,7 @@
     <div class="login-container">
         <div class="login-box">
             <h1 class="logo shadows-into-light-regular">LaPorto</h1>
-            <p class="welcome-message">Bem-vindo de volta! Faça login para acessar o painel.</p>
+            <p class="welcome-message">Painel do Administrador</p>
             <form action={{ route ('autenticar')}} method="POST" class="login-form">
                 @csrf
                 <input type="text" placeholder="Usuário" name="usuario" required>
