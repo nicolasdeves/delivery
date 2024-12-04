@@ -37,12 +37,7 @@
                     <a href="#drinks"><button><i class="fa-solid fa-martini-glass-citrus"></i>&nbsp;Drinks</button></a>
                 </div>
             </div>
-            <div class="reserva-btn-container text-center my-4">
-                <a href="{{ route('reserva-mesa') }}" class="btn btn-secondary btn-lg reserva-btn">
-                    <i class="fas fa-chair"></i> Reserva de Mesas
-                </a>
-            </div>
-    
+
         </div>
         <div class="content">
 
@@ -188,22 +183,7 @@
 
 
 
-
-
-
-
-
-
-
-
     @include('delivery.modal_confirmacao', compact('usuario', 'enderecos'))
-
-
-
-
-
-
-
 
     @include('templates.footer')
 
@@ -212,7 +192,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
 
 </body>
 

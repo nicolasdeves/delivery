@@ -24,10 +24,13 @@ class PedidoCozinhaController extends Controller
 
         if ($pedido->status_pedido == 0) {
             $pedido->status_pedido = 1;
+            DeliveryController::mensagem('Seu pedido está sendo preparado!');
         } elseif ($pedido->status_pedido == 1) {
             $pedido->status_pedido = 3;
+            DeliveryController::mensagem('Seu pedido está sendo enviado!');
         } elseif ($pedido->status_pedido == 3) {
             $pedido->status_pedido = 2;
+            DeliveryController::mensagem('Seu pedido foi entregue!');
         } elseif ($pedido->status_pedido == 2) {
             $pedido->status_pedido = 4;
         }
