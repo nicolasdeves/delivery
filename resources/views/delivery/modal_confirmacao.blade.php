@@ -15,7 +15,7 @@
                     <div class="mb-3">
                         <label for="enderecoSelect" class="form-label">Selecione seu endereço:</label>
                         <select id="enderecoSelect" class="form-control" onchange="preencherEndereco()">
-                            <option value="">Selecione um endereço</option>
+                            <option value="">Selecione ou digite um novo endereço</option>
                             @foreach ($enderecos as $endereco)
                                 <option value="{{ json_encode($endereco) }}">{{ $endereco['nome'] }}</option>
                             @endforeach
@@ -98,12 +98,26 @@
 
         function confirmarPedido() {
 
-            endereco.rua = document.getElementById('rua').value;
-            endereco.numero = document.getElementById('numero').value;
-            endereco.bairro = document.getElementById('bairro').value;
-            endereco.cep = document.getElementById('cep').value;
-            endereco.complemento = document.getElementById('complemento').value;
 
+            let endereco = {
+                rua: '',
+                numero: '',
+                bairro: '',
+                cep: '',
+                complemento: '',
+                id_endereco: null
+            };
+            endereco.rua = document.getElementById('rua').value.trim();
+            endereco.numero = document.getElementById('numero').value.trim();
+            endereco.bairro = document.getElementById('bairro').value.trim();
+            endereco.cep = document.getElementById('cep').value.trim();
+            endereco.complemento = document.getElementById('complemento').value.trim();
+            endereco.endereco_id = document.getElementById('enderecoSelect').value ? JSON.parse(document.getElementById('enderecoSelect').value).id : null;
+            observacao = document.getElementById('observacoes').value;
+            if (!endereco.rua || !endereco.numero || !endereco.bairro || !endereco.cep) {
+                alert('Preencha todos os campos obrigatórios');
+                return;
+            }
             finalizarPedido(endereco, observacao)
         }
     </script>

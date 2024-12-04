@@ -27,9 +27,6 @@ class DeliveryController extends Controller
         $usuario = Auth::user();
         $enderecos = $usuario->enderecos;
 
-        \Log::info("Usuário: " . $usuario);
-        \Log::info("Endereços: " . $enderecos);
-
         return view('delivery/inicio_delivery', compact('produtos', 'burgs', 'burgsComBatata', 'entradas', 'rangos', 'drinks', 'usuario', 'enderecos'));
     }
 
@@ -38,7 +35,20 @@ class DeliveryController extends Controller
         $valorTotal = 0;
         $usuario = Auth::user();
 
-        $this->atualizarEndereco($request->endereco);
+        if($request->endereco['endereco_id']) {
+            $this->atualizarEndereco($request->endereco);
+        } else {
+            $endereco = Endereco::create([
+                'rua'           => $request->endereco['rua'],
+                'numero'        => $request->endereco['numero'],
+                'bairro'        => $request->endereco['bairro'],
+                'cep'           => $request->endereco['cep'],
+                'complemento'   => $request->endereco['complemento'],
+                'usuario_id'    => $usuario->id,
+                'nome'          => $request->endereco['rua'] . ', ' . $request->endereco['numero']
+
+            ]);
+        }
 
         foreach ($request->carrinho as $item) {
             $idProduto = $item['id'];
@@ -55,7 +65,7 @@ class DeliveryController extends Controller
             'taxa_entrega_id' => 1,
             'pagamento_id' => 1,
             'usuario_id' => $usuario->id,
-
+            'endereco_id' => $request->endereco['endereco_id'] ? $request->endereco['endereco_id'] : $endereco->id,
         ]);
 
         foreach ($request->carrinho as $item) {
@@ -70,39 +80,7 @@ class DeliveryController extends Controller
             $valorTotal += $produto->preco;
         }
 
-        //mandar mensagem no WhatsApp pelo Twilio -> é trial, só funciona com números cadastrados, ou seja, precisamos cadastrar os números dos "clientes" do site do Twilio -> ler o qr code
-        /* try {
-            $sid = config('services.twilio.sid');
-            $token = config('services.twilio.token');
-
-            \Log::info("SID: " . $sid);
-            \Log::info("TOKEN: " . $token);
-
-            $client = new Client($sid, $token);
-
-            //Mensagem para o restaurante
-            $message = $client->messages->create(
-                'whatsapp:+555196705389', // Não pode ter o 9 adicional (+5551XXXXXXXX)
-                [
-                    'from' => 'whatsapp:+14155238886', // Número Twilio de teste
-                    'body' => 'Restaurante recebeu um novo pedido! Pedido: ' .
-                        $pedido->id . ' Valor total: R$' .
-                        floatval($valorTotal)
-                ]
-            );
-
-            // Mensagm de confirmação para o cliente
-            $message = $client->messages->create(
-                'whatsapp:+555196705389', // Não pode ter o 9 adicional (+5551XXXXXXXX)
-                [
-                    'from' => 'whatsapp:+14155238886', // Número Twilio de teste
-                    'body' => 'Restaurante recebeu seu pedido.'
-                ]
-            );
-
-        } catch (Exception $e) {
-            echo "Erro: " . $e->getMessage();
-        } */
+        $this->mensagem('Seu pedido foi recebido com sucesso!');
 
         redirect()->route('inicio');
 
@@ -119,11 +97,33 @@ class DeliveryController extends Controller
 
     public function atualizarEndereco($endereco)
     {
-        Endereco::where('id', $endereco['id'])->update([
+        Endereco::where('id', $endereco['endereco_id'])->update([
             'rua' => $endereco['rua'],
             'numero' => $endereco['numero'],
             'bairro' => $endereco['bairro'],
             'cep' => $endereco['cep'],
         ]);
+    }
+
+    public static function mensagem($mensagem) {
+        //mandar mensagem no WhatsApp pelo Twilio -> é trial, só funciona com números cadastrados, ou seja, precisamos cadastrar os números dos "clientes" do site do Twilio -> ler o qr code
+        try {
+            $sid = config('services.twilio.sid');
+            $token = config('services.twilio.token');
+
+            $client = new Client($sid, $token);
+
+            // Mensagm de confirmação para o cliente
+            $message = $client->messages->create(
+                'whatsapp:+555196705389', // Não pode ter o 9 adicional (+5551XXXXXXXX)
+                [
+                    'from' => 'whatsapp:+14155238886', // Número Twilio de teste
+                    'body' => $mensagem
+                ]
+            );
+
+        } catch (Exception $e) {
+            echo "Erro: " . $e->getMessage();
+        }
     }
 }

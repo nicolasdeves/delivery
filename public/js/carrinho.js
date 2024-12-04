@@ -1,5 +1,9 @@
 
 function abrirCarrinho() {
+    if (carrinho.length === 0) {
+        alert('Seu carrinho está vazio!');
+        return;
+    }
     document.getElementById("cartSidebar").classList.add("open");
 }
 
