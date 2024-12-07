@@ -100,8 +100,15 @@ Route::prefix('/adm')->group(function () {
     });
 });
 
-// Logout do usuário
-Route::post('/logout', [App\Http\Controllers\GerenciarUsuariosController::class, 'logout'])->name('logout');
+// Menu Usuário
+Route::prefix('/usuario')->group(function () {
+    Route::post('/logout', [App\Http\Controllers\GerenciarUsuariosController::class, 'logout'])->name('logout');
+    Route::get('/pedidos-usuario', [App\Http\Controllers\UsuarioController::class, 'pedidosUsuario'])->name('pedidos-usuario');
+    Route::get('/enderecos-usuario', [App\Http\Controllers\UsuarioController::class, 'enderecosUsuario'])->name('enderecos-usuario');
+    // Route::get('/enderecos-usuario', [App\Http\Controllers\UsuarioController::class, 'reservasUsuario'])->name('reservas-usuario');
+    Route::post('/excluir-endereco', [App\Http\Controllers\UsuarioController::class, 'excluirEndereco']);
+});
+
 
 //CRUD Cardápio
 Route::prefix('/cardapio')->group(function () {

@@ -34,8 +34,13 @@ class Pedido extends Model
         return $this->belongsTo(Usuario::class, 'usuario_id');
     }
 
-    public function pedidoProduto(){
+    public function pedidoProduto()
+    {
         return $this->hasMany(PedidoProduto::class, 'pedido_id');
     }
 
+    public function endereco()
+    {
+        return $this->belongsTo(Endereco::class, 'endereco_id');
+    }
 }
