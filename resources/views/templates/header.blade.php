@@ -16,9 +16,9 @@
 
                 @auth
                 <ul class="dropdown-menu" id="dropdown-menu">
-                    <li><a href="/perfil">Reservas</a></li>
-                    <li><a href="/configuracoes">Endereços</a></li>
-                    <li><a href="/configuracoes">Pedidos</a></li>
+                    {{-- <li><a href="{{ route('reservas-usuario') }}">Reservas</a></li> --}}
+                    <li><a href="{{ route('enderecos-usuario') }}">Endereços</a></li>
+                    <li><a href="{{ route('pedidos-usuario') }}">Pedidos</a></li>
 
                     <li>
                         <form action="{{ route('logout') }}" method="POST" style="display: inline;">

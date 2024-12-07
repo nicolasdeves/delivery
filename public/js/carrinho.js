@@ -71,11 +71,6 @@ function calcularTotal() {
 function finalizarPedido(endereco_selecionado, observacao) {
     const carrinhoData = carrinho;
 
-    console.log(carrinhoData)
-
-    console.log("observacao")
-    console.log(observacao)
-
     fetch('/delivery/finalizar-pedido', {
         method: 'POST',
         headers: {

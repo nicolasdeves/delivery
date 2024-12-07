@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Endereco;
+use App\Models\Pedido;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -55,5 +57,30 @@ class UsuarioController extends Controller
     {
         Auth::logout();
         return redirect()->route('login');
+    }
+
+    public function pedidosUsuario()
+    {
+        $pedidos = Pedido::where('usuario_id', Auth::user()->id)
+        ->where('status_pedido', Pedido::STATUS_PEDIDO_ENTREGUE)
+        ->with('pedidoProduto')
+        ->get();
+
+        return view('site/pedidos_usuario', compact('pedidos'));
+    }
+
+    public function enderecosUsuario()
+    {
+        $enderecos = Endereco::where('usuario_id', Auth::user()->id)->get();
+
+        return view('site/enderecos_usuario', compact('enderecos'));
+    }
+
+    public function excluirEndereco(Request $request)
+    {
+        $endereco = Endereco::find($request->endereco_id);
+        $endereco->delete();
+
+        return redirect()->route('enderecos-usuario');
     }
 }
