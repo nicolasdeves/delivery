@@ -183,7 +183,7 @@
 
 
 
-    @include('delivery.modal_confirmacao', compact('usuario', 'enderecos'))
+    @include('delivery.modal_confirmacao', compact('usuario', 'enderecos', 'metodos_pagamento'))
 
     @include('templates.footer')
 

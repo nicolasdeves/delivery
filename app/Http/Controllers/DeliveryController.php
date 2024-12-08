@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Endereco;
+use App\Models\MetodoPagamento;
 use App\Models\Pedido;
 use App\Models\PedidoProduto;
 use App\Models\Produto;
+use App\Models\Pagamento;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,10 +26,12 @@ class DeliveryController extends Controller
         $rangos = Produto::where('tipo_produto_id', 4)->get();
         $drinks = Produto::where('tipo_produto_id', 5)->get();
 
+        $metodos_pagamento = MetodoPagamento::all();
+
         $usuario = Auth::user();
         $enderecos = $usuario->enderecos;
 
-        return view('delivery/inicio_delivery', compact('produtos', 'burgs', 'burgsComBatata', 'entradas', 'rangos', 'drinks', 'usuario', 'enderecos'));
+        return view('delivery/inicio_delivery', compact('produtos', 'burgs', 'burgsComBatata', 'entradas', 'rangos', 'drinks', 'usuario', 'enderecos', 'metodos_pagamento'));
     }
 
     public function finalizarPedido(Request $request)
@@ -57,13 +61,20 @@ class DeliveryController extends Controller
             $valorTotal += $produto->preco;
         }
 
+        $metodoPagamento = json_decode($request->metodoPagamento, true);
+
+        $pagamento = Pagamento::create([
+            'descricao' => $metodoPagamento['descricao'],
+            'metodo_pagamento_id' => $metodoPagamento['id'],
+        ]);
+
         $pedido = Pedido::create([
             'status_pedido' => Pedido::STATUS_PEDIDO_ENVIADO,
             'status_pagamento' => Pedido::STATUS_PAGAMENTO_PENDENTE,
             'valor_total' => $valorTotal,
             'valor_pago' => 0,
             'taxa_entrega_id' => 1,
-            'pagamento_id' => 1,
+            'pagamento_id' => $pagamento->id,
             'usuario_id' => $usuario->id,
             'endereco_id' => $request->endereco['endereco_id'] ? $request->endereco['endereco_id'] : $endereco->id,
         ]);
