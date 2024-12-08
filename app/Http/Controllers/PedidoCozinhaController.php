@@ -13,7 +13,9 @@ class PedidoCozinhaController extends Controller
         $pedidosAbertos = Pedido::where('status_pedido', '0')->get();
         $pedidosEmProducao = Pedido::where('status_pedido', '1')->get();
         $pedidosEmEntrega = Pedido::where('status_pedido', '3')->get();
-        $pedidosFinalizados = Pedido::where('status_pedido', '2')->get();
+        $pedidosFinalizados = Pedido::where('status_pedido', '2')
+        ->where('created_at', '>=', date('Y-m-d 00:00:00'))
+        ->get();
 
         return view('adm/pedidos_cozinha', compact('pedidosAbertos', 'pedidosEmProducao', 'pedidosFinalizados', 'pedidosEmEntrega'));
     }

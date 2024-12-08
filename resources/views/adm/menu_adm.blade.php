@@ -26,43 +26,34 @@
 
     <div class="container lora-font">
         <div class="menu">
-            <div class="row">
-                <div class="menu-item">
-                    <h3>Adicionar Item ao Cardápio</h3>
-                    <a href="adicionar-cardapio">Adicionar</a>
+                <div class="row">
+                    <div class="menu-item">
+                        <h3>Adicionar Item ao Cardápio</h3>
+                        <a href="adicionar-cardapio">Adicionar</a>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Editar/Excluir item ao Cardápio</h3>
+                        <a href="editar-excluir-cardapio">Editar</a>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Cozinha</h3>
+                        <a href="{{route('pedidos-cozinha')}}">Cozinha</a>
+                    </div>
+
+
+                    <div class="menu-item">
+                        <h3>Relatório de reservas</h3>
+                        <a href="{{route('relatorio-reservas')}}">Reservas</a>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Gerenciar Usuários</h3>
+                        <a href="gerenciar-usuarios">Usuários</a>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Relatório de pedidos</h3>
+                        <a href="{{route('relatorio-pedidos')}}">Pedidos</a>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <h3>Editar/Excluir item ao Cardápio</h3>
-                    <a href="editar-excluir-cardapio">Editar</a>
-                </div>
-                <div class="menu-item">
-                    <h3>Listar Itens do Cardápio</h3>
-                    <a href="lista-cardapio">Listar</a>
-                </div>
-                
-            <div class="row">
-            </div>
-            <div class="menu-item">
-                <h3>Listar Itens do Cardápio</h3>
-                <a href="lista-cardapio">Listar</a>
-            </div>
-            <div class="menu-item">
-                <h3>Gerenciar Usuários</h3>
-                <a href="gerenciar-usuarios">Usuários</a>
-            </div>
-            <div class="menu-item">
-                <h3>Relatório de pedidos</h3>
-                <a href="{{route('relatorio-pedidos')}}">Pedidos</a>
-            </div>
-            <div class="menu-item">
-                <h3>Relatório de reservas</h3>
-                <a href="{{route('relatorio-reservas')}}">Reservas</a>
-            </div>
-            <div class="menu-item">
-                <h3>Cozinha</h3>
-                <a href="{{route('pedidos-cozinha')}}">Cozinha</a>
-            <div class="row">
-            </div>
             </div>
         </div>
     </div>
