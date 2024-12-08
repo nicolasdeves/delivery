@@ -53,6 +53,15 @@
                         <textarea class="form-control" id="observacoes" rows="3"></textarea>
                     </div>
 
+                    <div class="mb-3">
+                        <label for="metodo_pagamento" class="form-label">Método de pagamento:</label>
+                        <select class="form-control" name="metodo_pagamento" id="metodo_pagamento">
+                            @foreach ($metodos_pagamento as $metodo_pagamento)
+                                <option value="{{ json_encode($metodo_pagamento) }}">{{ $metodo_pagamento['descricao'] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
                     {{-- <p> <strong> Taxa de entrega: <span id="taxaEntrega">R$0,00</span> </strong> </p> --}}
                     <p> <strong> Total do pedido: <span id="totalPedido">R$0,00</span> </strong> </p>
@@ -114,11 +123,14 @@
             endereco.complemento = document.getElementById('complemento').value.trim();
             endereco.endereco_id = document.getElementById('enderecoSelect').value ? JSON.parse(document.getElementById('enderecoSelect').value).id : null;
             observacao = document.getElementById('observacoes').value;
+
+            let metodoPagamento = document.getElementById('metodo_pagamento').value;
+
             if (!endereco.rua || !endereco.numero || !endereco.bairro || !endereco.cep) {
                 alert('Preencha todos os campos obrigatórios');
                 return;
             }
-            finalizarPedido(endereco, observacao)
+            finalizarPedido(endereco, observacao, metodoPagamento)
         }
     </script>
 

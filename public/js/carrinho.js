@@ -68,7 +68,7 @@ function calcularTotal() {
     document.getElementById("cartTotal").textContent = "R$" + total.toFixed(2);
 }
 
-function finalizarPedido(endereco_selecionado, observacao) {
+function finalizarPedido(endereco_selecionado, observacao, metodoPagamento) {
     const carrinhoData = carrinho;
 
     fetch('/delivery/finalizar-pedido', {
@@ -80,7 +80,8 @@ function finalizarPedido(endereco_selecionado, observacao) {
         body: JSON.stringify({
             carrinho: carrinhoData,
             endereco: endereco_selecionado,
-            observacao
+            observacao,
+            metodoPagamento
         })
     })
     .then(response => response.json())
