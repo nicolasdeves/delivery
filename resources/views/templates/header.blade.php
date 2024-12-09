@@ -86,6 +86,10 @@
         color: #333;
     }
 
+    .dropdown-menu li form {
+        margin-left: 10px;
+    }
+
     .dropdown-menu li:hover {
         background-color: #f5f5f5;
     }
@@ -99,7 +103,8 @@
 
     .user-name p {
         margin: 0;
-        font-size: 14px; /* Ajuste o tamanho conforme necessário */
+        font-size: 14px;
+        /* Ajuste o tamanho conforme necessário */
     }
 </style>
 

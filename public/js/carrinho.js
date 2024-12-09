@@ -28,17 +28,17 @@ function atualizarCarrinho() {
 
     let total = 0;
 
-    carrinho.forEach(item => {
-        //Criação do HTML de cada item do carrinho (Cuida para não bugar essa poha)
+    carrinho.forEach((item, indice) => {
+        //Criação do HTML de cada item do carrinho, cuida para não fazer merda
         const itemElement = `
-        <hr>
+        <hr>    
             <div class="cart-item">
                 <img src="${item.imagem}" alt="Imagem do Produto" class="cart-item-img">
                 <div class="cart-item-details">
                     <h4 class="cart-item-name">${item.nome}</h4>
                     <p class="cart-item-price">R$${item.preco}</p>
                     <p class="cart-item-quantidade">Quantidade: ${item.quantidade}</p>
-                    <p class="cart-item-remove" onclick="removerDoCarrinho('${item.nome}')">Remover</p>
+                    <p class="cart-item-remove" onclick="removerDoCarrinho(${indice})" style="color: red; cursor: pointer;">Remover</p>
                 </div>
             </div>
         `;
@@ -47,17 +47,20 @@ function atualizarCarrinho() {
     });
 
     cartTotal.innerText = `R$${total.toFixed(2)}`;
-    totalPedido = `R$${total.toFixed(2)}`;
+    totalPedido.innerText = `R$${total.toFixed(2)}`;
 
-    console.log("totalPedido");
-    console.log(totalPedido);
+    console.log("Total Pedido:");
+    console.log(totalPedido.innerText);
 }
 
-function removerDoCarrinho(nomeProduto) {
-    //Remove o item do carrinho pelo nome, como o nome vai ser único, não tem problema
-    carrinho = carrinho.filter(item => item.nome !== nomeProduto);
+
+function removerDoCarrinho(indice) {
+    // Remove o item específico pelo índice
+    carrinho.splice(indice, 1);
     atualizarCarrinho();
 }
+
+
 
 function calcularTotal() {
     let total = 0;
@@ -83,17 +86,17 @@ function finalizarPedido(endereco_selecionado, observacao) {
             observacao
         })
     })
-    .then(response => response.json())
-    .then(data => {
-        carrinho= [];
-        cartItems.innerHTML = '';
-        cartTotal.innerText = 'R$0.00';
-        alert('Pedido finalizado com sucesso!');
-        location.reload();
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Erro ao finalizar o pedido!');
-    });
+        .then(response => response.json())
+        .then(data => {
+            carrinho = [];
+            cartItems.innerHTML = '';
+            cartTotal.innerText = 'R$0.00';
+            alert('Pedido finalizado com sucesso!');
+            location.reload();
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao finalizar o pedido!');
+        });
 }
 
