@@ -1,85 +1,171 @@
+.shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.lora-font {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color:#4a4a4a;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: #D3d3d3;
+}
+
+.contact-info span {
+    margin-right: 20px;
+    color: #333333;
+}
+
+.contact-info i {
+    margin-right: 8px;
+}
+
+.social-icons a {
+    color: #333;
+    margin-left: 15px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+nav {
+    background-color: #333333;
+    padding: 10px 30px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #dcdcdc;
+}
+
+.sublinhado {
+    text-decoration: none;
+    border-bottom: 2px solid white;
+}
+
+/* Reset geral */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
-
+/* Corpo da página */
 body {
-    background-color: #666; 
-    color: #f2f2f2; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #f8f8f8;
+    color: #333;
 }
 
-
-form {
-    background-color: #696969; 
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border: 2px solid #b20000; 
-}
-
+/* Título */
 h2 {
-    text-align: center;
-    color: #b20000; 
-    margin-bottom: 20px;
-}
-
-
-label {
-    display: block;
-    margin-bottom: 5px;
+    font-size: 2rem;
     font-weight: bold;
-    color: #f2f2f2; 
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-/* Estilo dos inputs */
-input[type="number"],
-input[type="date"],
-input[type="text"],
-textarea {
+/* Formulário */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Labels */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Inputs */
+form input[type="number"],
+form input[type="date"],
+form input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #666; /* Cinza */
-    border-radius: 5px;
-    background-color: #333;
-    color: #f2f2f2; /* Cinza claro */
+    margin-bottom: 20px;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #e9e9e9;
 }
 
-/* Botão principal */
+/* Botões */
 button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    background-color: #d23a3a; /* Cor do botão estilo "Ver Carrinho" */
+    color: white;
     border: none;
-    border-radius: 5px;
-    background-color: #b20000; /* Vermelho */
-    color: #f2f2f2; /* Cinza claro */
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    background-color: #d32f2f; /* Vermelho mais claro */
+    background-color: #b72f2f;
 }
 
-/* Link para "Minhas reservas" */
+/* Botão secundário */
 a button {
-    background-color: #444; /* Cinza médio */
-    color: #f2f2f2; /* Cinza claro */
+    background-color: #555;
+    margin-top: 10px;
 }
 
 a button:hover {
-    background-color: #666; /* Cinza mais claro */
+    background-color: #444;
+}
+
+/* Links */
+a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.footer-logo {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50px;
 }
 
 /* Responsividade */
@@ -89,6 +175,6 @@ a button:hover {
     }
 
     button {
-        padding: 8px;
+        font-size: 0.9rem;
     }
 }

@@ -29,7 +29,7 @@
     <br>
 
     <div class="container">
-        <h2>Endereços:</h2>
+        <h2 class="shadows-into-light-regular">Endereços:</h2>
         <table>
             <thead>
                 <tr>
@@ -63,18 +63,17 @@
 </html>
 
 <script>
-   function excluirEndereco(id) {
-    fetch('/usuario/excluir-endereco', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-        body: JSON.stringify({
-            endereco_id: id
-        })
-    })
-    .then(response => response.json())
+    function excluirEndereco(id) {
+        fetch('/usuario/excluir-endereco', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    endereco_id: id
+                })
+            })
+            .then(response => response.json())
     }
-
 </script>

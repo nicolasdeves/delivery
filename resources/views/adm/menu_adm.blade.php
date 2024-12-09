@@ -26,39 +26,41 @@
 
     <div class="container lora-font">
         <div class="menu">
-                <div class="row">
-                    <div class="menu-item">
-                        <h3>Adicionar Item ao Cardápio</h3>
-                        <a href="adicionar-cardapio">Adicionar</a>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Editar/Excluir item ao Cardápio</h3>
-                        <a href="editar-excluir-cardapio">Editar</a>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Cozinha</h3>
-                        <a href="{{route('pedidos-cozinha')}}">Cozinha</a>
-                    </div>
+            <div class="row">
+                <div class="menu-item">
+                    <h3>Adicionar Item ao Cardápio</h3>
+                    <a href="adicionar-cardapio">Adicionar</a>
+                </div>
+                <div class="menu-item">
+                    <h3>Editar/Excluir item ao Cardápio</h3>
+                    <a href="editar-excluir-cardapio">Editar</a>
+                </div>
+                <div class="menu-item">
+                    <h3>Cozinha</h3>
+                    <a href="{{route('pedidos-cozinha')}}">Cozinha</a>
+                </div>
 
 
-                    <div class="menu-item">
-                        <h3>Relatório de reservas</h3>
-                        <a href="{{route('relatorio-reservas')}}">Reservas</a>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Gerenciar Usuários</h3>
-                        <a href="gerenciar-usuarios">Usuários</a>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Relatório de pedidos</h3>
-                        <a href="{{route('relatorio-pedidos')}}">Pedidos</a>
-                    </div>
+                <div class="menu-item">
+                    <h3>Relatório de reservas</h3>
+                    <a href="{{route('relatorio-reservas')}}">Reservas</a>
+                </div>
+                <div class="menu-item">
+                    <h3>Gerenciar Usuários</h3>
+                    <a href="gerenciar-usuarios">Usuários</a>
+                </div>
+                <div class="menu-item">
+                    <h3>Relatório de pedidos</h3>
+                    <a href="{{route('relatorio-pedidos')}}">Pedidos</a>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
-    @include('templates.footer')
+    <div class="fixed-bottom">
+        @include('templates.footer')
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

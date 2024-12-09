@@ -39,7 +39,7 @@ class DeliveryController extends Controller
         $valorTotal = 0;
         $usuario = Auth::user();
 
-        if($request->endereco['endereco_id']) {
+        if ($request->endereco['endereco_id']) {
             $this->atualizarEndereco($request->endereco);
         } else {
             $endereco = Endereco::create([
@@ -116,7 +116,8 @@ class DeliveryController extends Controller
         ]);
     }
 
-    public static function mensagem($mensagem) {
+    public static function mensagem($mensagem)
+    {
         //mandar mensagem no WhatsApp pelo Twilio -> é trial, só funciona com números cadastrados, ou seja, precisamos cadastrar os números dos "clientes" do site do Twilio -> ler o qr code
         try {
             $sid = config('services.twilio.sid');
@@ -132,7 +133,6 @@ class DeliveryController extends Controller
                     'body' => $mensagem
                 ]
             );
-
         } catch (Exception $e) {
             echo "Erro: " . $e->getMessage();
         }

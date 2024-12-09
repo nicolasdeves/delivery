@@ -26,7 +26,7 @@
     <br>
 
     <div class="container">
-        <h2>Pedidos:</h2>
+        <h2 class=shadows-into-light-regular>Pedidos:</h2>
         <table>
             <thead>
                 <tr>
@@ -50,16 +50,16 @@
                     </td>
                 </tr>
 
-                    <tr id="info-{{ $pedido->id }}" class="info-adicional" style="display: none;">
-                        <td colspan="4">
-                            <div style="margin-bottom: 1em;">
-                                @foreach($pedido->pedidoProduto as $pedidoProduto)
-                                <p>Produto: {{ $pedidoProduto->produto->nome }}</p>
-                                <p>Valor: {{ $pedidoProduto->produto->preco }}</p>
-                                @endforeach
-                            </div>
-                        </td>
-                    </tr>
+                <tr id="info-{{ $pedido->id }}" class="info-adicional" style="display: none;">
+                    <td colspan="4">
+                        <div style="margin-bottom: 1em;">
+                            @foreach($pedido->pedidoProduto as $pedidoProduto)
+                            <p>Produto: {{ $pedidoProduto->produto->nome }}</p>
+                            <p>Valor: {{ $pedidoProduto->produto->preco }}</p>
+                            @endforeach
+                        </div>
+                    </td>
+                </tr>
 
                 @endforeach
             </tbody>
@@ -85,27 +85,25 @@
             infoRows[i].style.display = 'none';
         }
     }
-    document.addEventListener('DOMContentLoaded', function () {
-    const now = new Date();
+    document.addEventListener('DOMContentLoaded', function() {
+        const now = new Date();
 
-    function formatDate(date) {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        const hours = String(date.getHours()).padStart(2, '0');
-        const minutes = String(date.getMinutes()).padStart(2, '0');
-        return `${year}-${month}-${day}T${hours}:${minutes}`;
-    }
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
+        }
 
-    const startOfDay = new Date(now.setHours(0, 0, 0, 0));
-    const formattedStartOfDay = formatDate(startOfDay);
+        const startOfDay = new Date(now.setHours(0, 0, 0, 0));
+        const formattedStartOfDay = formatDate(startOfDay);
 
-    const endOfDay = new Date(new Date().setHours(23, 59, 0, 0));
-    const formattedEndOfDay = formatDate(endOfDay);
+        const endOfDay = new Date(new Date().setHours(23, 59, 0, 0));
+        const formattedEndOfDay = formatDate(endOfDay);
 
-    document.getElementById('data_inicial').value = formattedStartOfDay;
-    document.getElementById('data_final').value = formattedEndOfDay;
-});
-
-
+        document.getElementById('data_inicial').value = formattedStartOfDay;
+        document.getElementById('data_final').value = formattedEndOfDay;
+    });
 </script>
