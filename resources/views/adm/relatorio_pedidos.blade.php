@@ -172,3 +172,24 @@
 </body>
 
 </html>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        text-align: left; 
+        padding: 8px;
+        border: 1px solid #ddd; 
+    }
+
+
+    .toggle-button {
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+
